@@ -12,7 +12,7 @@ export const ReviewCard = props => {
 
   const comments = reviews.map(review => {
     return (
-      <Container>
+      <Container key={review.id}>
         <TopContainer>
           <div>
             <Paragraph>

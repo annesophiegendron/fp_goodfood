@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   name: localStorage.getItem("name"),
@@ -6,7 +6,7 @@ const initialState = {
   userId: "",
   accessToken: localStorage.getItem("accessToken"),
   loggedIn: localStorage.getItem("loggedIn")
-};
+}
 
 export const auth = createSlice({
   name: "auth",
@@ -33,4 +33,4 @@ export const auth = createSlice({
       localStorage.setItem("name", action.payload);
     }
   }
-});
+})

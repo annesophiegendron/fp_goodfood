@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
+
 import { Container, Form, Title, Label, Input, SubmitButton, Error} from "../styles/styles_Register"
 
 import { handleRegister } from "../fetch_data/auth"

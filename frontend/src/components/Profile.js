@@ -19,6 +19,7 @@ export const Profile = () => {
 
   return (
     <Container>
+      
       {loggedIn && (
         <>
           <Header>
@@ -49,6 +50,7 @@ export const Profile = () => {
           </ErrorButton>
         </ErrorContainer>
       )}
+      
     </Container>
   )
 }

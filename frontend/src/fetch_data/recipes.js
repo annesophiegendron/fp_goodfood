@@ -1,4 +1,5 @@
 // WELCOME PAGE SEARCH BAR
+
 export const handleSubmit = (event, searchText, setRecipes, setSearchText) => {
   event.preventDefault();
   fetch(
@@ -15,6 +16,7 @@ export const handleSubmit = (event, searchText, setRecipes, setSearchText) => {
 }
 
 // DETAILS PAGE
+
 export const fetchData = async (recipeId, setError, setDetails, setLoading) => {
   const api_key = "eff3d2c7c763473ca8a93a295b37cf51"
 

@@ -8,8 +8,6 @@ import { Error } from "../styles/styles_Register"
 import { auth } from "../reducers/auth"
 import { handleLoginUser } from "../fetch_data/auth"
 
-// const URL = "http://localhost:8080/sessions";
-
 export const Login = () => {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
