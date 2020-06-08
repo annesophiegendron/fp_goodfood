@@ -29,7 +29,9 @@ app.get("/", (req, res) => {
 //                           POST
 // =================================================================
 
-// REGISTER USER
+// https://goodfood-annesophie.herokuapp.com/
+
+// REGISTER USER 
 app.post("/users", async (req, res) => {
   try {
     const { name, password, email } = req.body
@@ -112,7 +114,7 @@ app.get("/profile", async (req, res) => {
   console.log(username)
   Review.find({ authorName: username }, (err, reviews) => {
     if (err) {
-      console.log(err);
+      console.log(err)
       res.status(404).json({ error: "Not found" })
     } else {
       res.json(reviews)
@@ -169,17 +171,17 @@ app.delete("/:reviewId", async (req, res) => {
 app.delete("/favourites/:favouriteId", async (req, res) => {
   const { favouriteId } = req.params;
 
-  await Like.findByIdAndDelete(favouriteId, (err, favs) => {
+  await Like.findByIdAndDelete(favouriteId, (err, fav) => {
     if (err) {
-      console.log(err);
-      res.status(404).json({ error: "Not deleted" });
+      console.log(err)
+      res.status(404).json({ error: "not deleted" })
     } else {
-      res.json(favs);
+      res.json(fav)
     }
-  });
-});
+  })
+})
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+  console.log(`Server running on http://localhost:${port}`)
+})
