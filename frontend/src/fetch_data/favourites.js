@@ -37,7 +37,13 @@ export const deleteFavourite = favouriteId => {
 
 // GET FAVOURITE ITEMS FOR UNIQUE USER
 export const getFavourites = (name, setFavourites) => {
-  fetch(`https://goodfood-annesophie.herokuapp.com/like?username=${name}`)
+  fetch(`https://goodfood-annesophie.herokuapp.com/like?username=${name}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  })
     .then(res => res.json())
     .then(json => {
       setFavourites(json);

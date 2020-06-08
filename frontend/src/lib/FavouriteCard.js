@@ -9,7 +9,7 @@ import { deleteFavourite } from "../fetch_data/favourites"
 import { OneFavourite } from "../styles/styles_Favourites"
 
 export const FavouriteCard = ({ favourites }) => {
-  const favs = favourites.map(favourite => {
+  const fav = favourites.map(favourite => {
     return (
       <OneFavourite>
         <Image src={favourite.image} />
@@ -27,5 +27,5 @@ export const FavouriteCard = ({ favourites }) => {
     )
   })
 
-  return <>{favs}</>
+  return <>{fav}</>
 }

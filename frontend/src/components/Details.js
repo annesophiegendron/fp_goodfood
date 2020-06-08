@@ -14,7 +14,6 @@ import { ButtonProfile, HeaderReview, InputReview, Form } from "../styles/styles
 
 import { Container, ClearButton, Header, ButtonContainer, Loader } from "../styles/styles_global"
 
-// const URL = "http://localhost:8080/review"
 export const Details = () => {
   const [details, setDetails] = useState([])
   const [reviews, setReviews] = useState([])
