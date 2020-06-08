@@ -1,5 +1,5 @@
 export const addFavourite = recipe => {
-  fetch(`http://localhost:8080/like`, {
+  fetch(`https://goodfood-annesophie.herokuapp.com/like`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -20,7 +20,7 @@ export const addFavourite = recipe => {
 }
 
 export const deleteFavourite = favouriteId => {
-  fetch(`http://localhost:8080/fav/${favouriteId}`, {
+  fetch(`https://goodfood-annesophie.herokuapp.com/favourites/${favouriteId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -34,7 +34,7 @@ export const deleteFavourite = favouriteId => {
 }
 
 export const getFavourites = (name, setFavourites) => {
-  fetch(`http://localhost:8080/like?username=${name}`)
+  fetch(`https://goodfood-annesophie.herokuapp.com/like?username=${name}`)
     .then(res => res.json())
     .then(json => {
       setFavourites(json);

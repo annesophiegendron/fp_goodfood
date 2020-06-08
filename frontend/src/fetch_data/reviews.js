@@ -1,5 +1,5 @@
 export const getReviews = (name, setReviews) => {
-  fetch(`http://localhost:8080/profile?username=${name}`)
+  fetch(`https://goodfood-annesophie.herokuapp.com/profile?username=${name}`)
     .then(res => res.json())
     .then(json => {
       setReviews(json);
@@ -7,7 +7,7 @@ export const getReviews = (name, setReviews) => {
 };
 
 export const handleDelete = reviewId => {
-  fetch(`http://localhost:8080/${reviewId}`, {
+  fetch(`https://goodfood-annesophie.herokuapp.com/${reviewId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -21,7 +21,7 @@ export const handleDelete = reviewId => {
 };
 
 export const fetchReviews = (recipeId, setReviews) => {
-  fetch(`http://localhost:8080/review?recipeId=${recipeId}`)
+  fetch(`https://goodfood-annesophie.herokuapp.com/review?recipeId=${recipeId}`)
     .then(res => res.json())
     .then(json => {
       setReviews(json);
@@ -31,7 +31,7 @@ export const fetchReviews = (recipeId, setReviews) => {
 // const URL = "http://localhost:8080/like";
 export const addReview = (recipe, setReviews, setUserReview, reviews, event) => {
   event.preventDefault();
-  fetch(`http://localhost:8080/review`, {
+  fetch(`https://goodfood-annesophie.herokuapp.com/review`, {
     method: "POST",
     headers: {
       Accept: "application/json",

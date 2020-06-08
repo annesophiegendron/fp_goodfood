@@ -1,5 +1,5 @@
 export const handleRegister = (name, email, password, setErrorText, history) => {
-  fetch("http://localhost:8080/users", {
+  fetch("https://goodfood-annesophie.herokuapp.com//users", {
     method: "POST",
     body: JSON.stringify({ name, email, password }),
     headers: { "Content-Type": "application/json" }
@@ -20,7 +20,7 @@ export const handleRegister = (name, email, password, setErrorText, history) => 
 export const handleLoginUser = (event, auth, email, password, setErrorText, dispatch, history) => {
  event.preventDefault();
 
-  fetch("http://localhost:8080/sessions", {
+  fetch("https://goodfood-annesophie.herokuapp.com//sessions", {
     method: "POST",
     body: JSON.stringify({ email, password }),
     headers: {
