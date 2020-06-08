@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 
-import { ReviewCard } from "../lib/ReviewCard"
-import { Logout } from "./Logout"
+import { ReviewCard } from "../components/ReviewCard"
+import { Logout } from "../components/Logout"
 
 import { ErrorButton, ErrorContainer } from "../styles/styles_error"
 
