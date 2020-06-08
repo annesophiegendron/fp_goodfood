@@ -1,113 +1,185 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import cors from 'cors'
-import mongoose from 'mongoose'
-import crypto from 'crypto'
-import bcrypt from 'bcrypt-nodejs'
-import secretMessageData from './data/secretmessage.json'
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import mongoose from "mongoose";
+import bcrypt from "bcrypt-nodejs";
 
-const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/authAPI"
+import { User } from "./models/User"
+import { Review } from "./models/Review"
+import { Like } from "./models/Like"
+
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/goodfood";
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.Promise = Promise
-
-// USER MODEL
-const User = mongoose.model('User', {
-  name: {
-    type: String,
-    unique: true,
-    required: true,
-    minlength: 2,
-    maxlength: 20
-  },
-  email: {
-    type: String,
-    unique: true,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true,
-    minLength: 5
-  },
-  accessToken: {
-    type: String,
-    default: () => crypto.randomBytes(128).toString('hex')
-  }
-})
-
-// Secret messages model
-const SecretMessage = mongoose.model('SecretMessage', {
-  message: {
-    type: String
-  }
-})
-
-if (process.env.RESET_DATABASE) {
-  console.log('Resetting database ...')
-
-  const seedDatabase = async () => {
-    await SecretMessage.deleteMany()
-    await secretMessageData.forEach((secretMessage) => new SecretMessage(secretMessage).save())
-  }
-  seedDatabase()
-}
 
 // PORT=9000 npm start
 const port = process.env.PORT || 8080
 const app = express()
 
-//  MIDDLEWARE TO ENABLE CORS AND JSON BODY PARSING
+// Middlewares to enable cors and json body parsing
 app.use(cors())
 app.use(bodyParser.json())
 
-// Middleware to check user's access token in DB
-const authenticateUser = async (req, res, next) => {
-  const user = await User.findOne({ accessToken: req.header('Authorization') })
-  if (user) {
-    req.user = user
-    next()
-  } else {
-    res.status(403).json({ loggedOut: true, message: 'Please login to access the content' })
-  }
-}
-
-// ROUTES
-app.get('/', (req, res) => {
-  res.send('Technigo Auth project 2020: Lisa Hammarstrand and Anne-Sophie Gendron')
+//ROUTES
+app.get("/", (req, res) => {
+  res.send("goodfood project - anne-sophie gendron @2020")
 })
 
-// ROUTE FOR REGISTER
-app.post('/users', async (req, res) => {
+// =================================================================
+//                           POST
+// =================================================================
+
+// REGISTER USER
+app.post("/users", async (req, res) => {
   try {
-    const { name, email, password } = req.body
-    // DO not store plaintext passwords
+    const { name, password, email } = req.body
     const user = new User({ name, email, password: bcrypt.hashSync(password) })
-    user.save()
-    res.status(201).json({ id: user._id, accessToken: user.accessToken })
+    await user.save()
+    res
+      .status(201)
+      .json({ id: user._id, accessToken: user.accessToken, name: user.name })
+    console.log({ user })
   } catch (err) {
-    res.status(400).json({ message: "Could not create user", errors: err.errors })
+    res.status(400).json({
+      message: "Cannot create user. Please try again!",
+      errors: err.errors
+    })
   }
 })
 
-// ROUTES FOR SECRETS
-app.get('/secrets', authenticateUser)
-
-app.get('/secrets', async (req, res) => {
-  const secretmessages = await SecretMessage.find().exec()
-  res.json(secretmessages)
-})
-
-// ROUTE FOR LOGIN (find a user, do not create)
-app.post('/sessions', async (req, res) => {
+// LOGIN USER
+app.post("/sessions", async (req, res) => {
   const user = await User.findOne({ email: req.body.email })
+
   if (user && bcrypt.compareSync(req.body.password, user.password)) {
-    res.json({ userId: user._id, accessToken: user.accessToken })
+    res.status(201).json({
+      userId: user._id,
+      accessToken: user.accessToken,
+      name: user.name,
+      loggedIn: true
+    });
   } else {
-    res.status(401).json({ notFound: true, statusCode: 401, error: "Login failed" })
+    res.status(403).json({ message: "User not found, access denied" })
   }
 })
+
+// ADD USER REVIEW
+app.post("/review", async (req, res) => {
+  try {
+    const review = new Review({
+      review: req.body.review,
+      id: req.body.id,
+      recipeId: req.body.recipeId,
+      title: req.body.title,
+      description: req.body.description,
+      authorName: req.body.authorName
+    });
+    await review.save()
+    res.json(review)
+  } catch (err) {
+    res
+      .status(400)
+      .json({ errors: err.errors, comment: "Cannot add new comment" })
+  }
+})
+
+//ADD TO FAVOURITES
+app.post("/like", async (req, res) => {
+  try {
+    const like = new Like({
+      id: req.body.id,
+      title: req.body.title,
+      username: req.body.username,
+      image: req.body.image,
+    })
+    await like.save()
+    res.json(like)
+  } catch (err) {
+    res
+      .status(400)
+      .json({ errors: err.errors, comment: "Cannot add to favourites" })
+  }
+})
+
+
+// =================================================================
+//                            GET
+// =================================================================
+
+// SHOW REVIEWS (UNIQUE USER)
+app.get("/profile", async (req, res) => {
+  const username = req.query.username
+  console.log(username)
+  Review.find({ authorName: username }, (err, reviews) => {
+    if (err) {
+      console.log(err);
+      res.status(404).json({ error: "Not found" })
+    } else {
+      res.json(reviews)
+    }
+  }).sort({ createdAt: "desc" })
+})
+
+//SHOW REVIEWS (UNIQUE RECIPE)
+app.get("/review", async (req, res) => {
+  const recipeId = req.query.recipeId
+  Review.find({ id: recipeId }, (err, reviews) => {
+    if (err) {
+      console.log(err)
+      res.status(404).json({ error: "Not found" })
+    } else {
+      res.json(reviews)
+    }
+  }).sort({ createdAt: "desc" })
+})
+
+//SHOW FAVOURITE RECIPES FOR SPECIFIC USER
+app.get("/like", async (req, res) => {
+  const username = req.query.username
+  Like.find({ username: username }, (err, reviews) => {
+    if (err) {
+      console.log(err)
+      res.status(404).json({ error: "Not found" })
+    } else {
+      res.json(reviews)
+    }
+  }).sort({ createdAt: "desc" })
+})
+
+// =================================================================
+//                            DELETE ROUTES
+// =================================================================
+
+//DELETE A REVIEW
+app.delete("/:reviewId", async (req, res) => {
+  const { reviewId } = req.params
+  try {
+    const remove = await Review.findByIdAndDelete(reviewId)
+    remove.save()
+    res.status(201).json(remove)
+  } catch (err) {
+    res.status(400).json({
+      message: "Cannot delete",
+      errors: err.errors
+    })
+  }
+})
+
+//DELETE A FAVOURITE
+app.delete("/favourites/:favouriteId", async (req, res) => {
+  const { favouriteId } = req.params;
+
+  await Like.findByIdAndDelete(favouriteId, (err, favs) => {
+    if (err) {
+      console.log(err);
+      res.status(404).json({ error: "Not deleted" });
+    } else {
+      res.json(favs);
+    }
+  });
+});
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`)
-})
+  console.log(`Server running on http://localhost:${port}`);
+});
