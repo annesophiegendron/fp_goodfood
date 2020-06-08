@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 
 import { Container, Header, ButtonContainer, ClearButton, MainTitle, CardContainer } from "../styles/styles_global"
 import { Logout } from "./Logout"
-import { FavouriteCard } from "./FavouriteCard"
+import { FavouriteCard } from "../lib/FavouriteCard"
 
 import { getFavourites } from "../fetch_data/favourites"
 import { ErrorButton, ErrorContainer } from "../styles/styles_error"

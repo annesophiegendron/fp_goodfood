@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 
 import { DetailsReview } from "./DetailsReview"
 import { Logout } from "./Logout"
-import { DetailsCard } from "./DetailsCard"
+import { DetailsCard } from "../lib/DetailsCard"
 
 import { fetchData } from "../fetch_data/recipes"
 import { fetchReviews, addReview } from "../fetch_data/reviews"

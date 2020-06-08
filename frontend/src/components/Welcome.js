@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 
 import { AddFavourite } from "./AddFavourite"
 import { Logout } from "./Logout"
-import { RecipeCard } from "./RecipeCard"
+import { RecipeCard } from "../lib/RecipeCard"
 
 import { ErrorButton, ErrorContainer } from "../styles/styles_error"
 

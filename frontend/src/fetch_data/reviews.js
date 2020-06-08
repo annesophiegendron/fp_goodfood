@@ -1,11 +1,13 @@
+// GET REVIEWS FOR UNIQUE USER
 export const getReviews = (name, setReviews) => {
   fetch(`https://goodfood-annesophie.herokuapp.com/profile?username=${name}`)
     .then(res => res.json())
     .then(json => {
       setReviews(json);
-    });
-};
+    })
+}
 
+// HANDLE DELETE REVIEW 
 export const handleDelete = reviewId => {
   fetch(`https://goodfood-annesophie.herokuapp.com/${reviewId}`, {
     method: "DELETE",
@@ -17,18 +19,19 @@ export const handleDelete = reviewId => {
     .then(res => res.json())
     .then(() => {
       window.location.reload();
-    });
-};
+    })
+}
 
+// GET REVIEWS FOR ONE RECIPE ITEM
 export const fetchReviews = (recipeId, setReviews) => {
   fetch(`https://goodfood-annesophie.herokuapp.com/review?recipeId=${recipeId}`)
     .then(res => res.json())
     .then(json => {
-      setReviews(json);
-    });
-};
+      setReviews(json)
+    })
+}
 
-// const URL = "http://localhost:8080/like";
+// ADD REVIEW TO RECIPE 
 export const addReview = (recipe, setReviews, setUserReview, reviews, event) => {
   event.preventDefault();
   fetch(`https://goodfood-annesophie.herokuapp.com/review`, {
@@ -47,10 +50,10 @@ export const addReview = (recipe, setReviews, setUserReview, reviews, event) => 
     .then(res => res.json())
     .then(json => {
       console.log(json);
-      const newReviews = [...reviews, json];
+      const newReviews = [...reviews, json]
       setReviews(
         newReviews.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
-      );
-      setUserReview("");
-    });
-};
+      )
+      setUserReview("")
+    })
+}

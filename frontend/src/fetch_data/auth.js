@@ -1,3 +1,4 @@
+// HANDLE REGISTER
 export const handleRegister = (name, email, password, setErrorText, history) => {
   fetch("https://goodfood-annesophie.herokuapp.com/users", {
     method: "POST",
@@ -17,6 +18,7 @@ export const handleRegister = (name, email, password, setErrorText, history) => 
     .catch(err => console.log("error:", err))
 }
 
+//HANDLE LOGIN
 export const handleLoginUser = (event, auth, email, password, setErrorText, dispatch, history) => {
  event.preventDefault();
 

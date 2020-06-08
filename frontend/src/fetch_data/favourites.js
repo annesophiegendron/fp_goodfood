@@ -1,3 +1,4 @@
+// ADD ITEM TO FAVOURITES
 export const addFavourite = recipe => {
   fetch(`https://goodfood-annesophie.herokuapp.com/like`, {
     method: "POST",
@@ -19,6 +20,7 @@ export const addFavourite = recipe => {
   alert("The recipe is added to your favourites!")
 }
 
+// REMOVE ITEM FROM FAVOURITE
 export const deleteFavourite = favouriteId => {
   fetch(`https://goodfood-annesophie.herokuapp.com/favourites/${favouriteId}`, {
     method: "DELETE",
@@ -33,6 +35,7 @@ export const deleteFavourite = favouriteId => {
     })
 }
 
+// GET FAVOURITE ITEMS FOR UNIQUE USER
 export const getFavourites = (name, setFavourites) => {
   fetch(`https://goodfood-annesophie.herokuapp.com/like?username=${name}`)
     .then(res => res.json())
