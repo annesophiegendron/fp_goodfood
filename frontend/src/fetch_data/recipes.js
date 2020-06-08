@@ -19,8 +19,7 @@ export const fetchData = async (recipeId, setError, setDetails, setLoading) => {
   const api_key = "eff3d2c7c763473ca8a93a295b37cf51"
 
   const resp = await fetch(
-    `https://api.spoonacular.com/recipes/${recipeId}/information?includeInstruction=true&apiKey=${api_key}`
-  )
+    `https://api.spoonacular.com/recipes/${recipeId}/information?includeInstruction=true&apiKey=${api_key}`)
   const json = await resp.json()
   if (json.status_code === 34) {
     setError(true)

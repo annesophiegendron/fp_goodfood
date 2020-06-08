@@ -7,7 +7,7 @@ export const handleRegister = (name, email, password, setErrorText, history) => 
     .then(res => {
       res.json();
       if (res.status === 201) {
-        history.push("/login");
+        history.push("/login")
       } else {
         setErrorText(true);
         throw new Error("Cannot sign up, please try again")
@@ -32,16 +32,16 @@ export const handleLoginUser = (event, auth, email, password, setErrorText, disp
         return res.json();
       } else {
         setErrorText(true);
-        throw new Error("Unable to login, please try again");
+        throw new Error("Unable to login, please try again")
       }
     })
     .then(json => {
-      history.push("/welcome");
-      console.log(json);
-      dispatch(auth.actions.setLoggedIn(json.loggedIn));
-      dispatch(auth.actions.setToken(json.accessToken));
-      dispatch(auth.actions.setUser(json.userId));
-      dispatch(auth.actions.setName(json.name));
+      history.push("/welcome")
+      console.log(json)
+      dispatch(auth.actions.setLoggedIn(json.loggedIn))
+      dispatch(auth.actions.setToken(json.accessToken))
+      dispatch(auth.actions.setUser(json.userId))
+      dispatch(auth.actions.setName(json.name))
     })
-    .catch(err => console.log("error:", err));
-};
+    .catch(err => console.log("error:", err))
+}

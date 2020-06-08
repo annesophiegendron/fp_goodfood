@@ -40,7 +40,7 @@ export const Login = () => {
         <SubmitButton
             onClick={event => handleLoginUser(event, auth, email, password, setErrorText, dispatch, history)}
           >Login</SubmitButton>
-        {errorText && <Error>User not found, access forbidden!</Error>}
+        {errorText && <Error>User not found, access denied. Please try again.</Error>}
           
       </Form>
       
