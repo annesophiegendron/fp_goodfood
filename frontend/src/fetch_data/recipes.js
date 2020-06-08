@@ -6,7 +6,7 @@ export const handleSubmit = (event, searchText, setRecipes, setSearchText) => {
     .then(res => res.json())
     .then(json => {
       setRecipes(json)
-      sessionStorage.setItem("recipesArray", [])
+      sessionStorage.setItem("recipesArray")
       setSearchText("")
     })
     .catch(error => {
