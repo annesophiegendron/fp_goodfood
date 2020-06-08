@@ -5,8 +5,8 @@ export const handleSubmit = (event, searchText, setRecipes, setSearchText) => {
     `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchText}&number=20&apiKey=eff3d2c7c763473ca8a93a295b37cf51`)
     .then(res => res.json())
     .then(json => {
-      setRecipes(json.results)
-      sessionStorage.setItem("recipesArray", JSON.stringify(json.results))
+      setRecipes(json)
+      sessionStorage.setItem("recipesArray", JSON.stringify(json))
       setSearchText("")
     })
     .catch(error => {
