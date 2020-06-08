@@ -2,7 +2,7 @@ import React from "react"
 import { useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 
-import { Logout } from "./Logout"
+import { Logout } from "../components/Logout"
 
 import { Container, Header, MainTitle, ButtonContainer, ClearButton } from "../styles/styles_global"
 

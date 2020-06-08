@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { useSelector } from "react-redux"
 
-import { AddFavourite } from "./AddFavourite"
-import { Logout } from "./Logout"
+import { AddFavourite } from "../components/AddFavourite"
+import { Logout } from "../components/Logout"
 import { RecipeCard } from "../lib/RecipeCard"
 
 import { ErrorButton, ErrorContainer } from "../styles/styles_error"

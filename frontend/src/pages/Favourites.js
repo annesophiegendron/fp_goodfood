@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom"
 import { useSelector } from "react-redux"
 
 import { Container, Header, ButtonContainer, ClearButton, MainTitle, CardContainer } from "../styles/styles_global"
-import { Logout } from "./Logout"
-import { FavouriteCard } from "../lib/FavouriteCard"
+import { Logout } from "../components/Logout"
+import { FavouriteCard } from "../components/FavouriteCard"
 
 import { getFavourites } from "../fetch_data/favourites"
 import { ErrorButton, ErrorContainer } from "../styles/styles_error"
