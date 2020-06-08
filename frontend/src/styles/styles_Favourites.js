@@ -44,7 +44,7 @@ cursor: pointer;
   }
 `
 
-export const OneFavourite = styled.div`
+export const FavouriteItem = styled.div`
   width: 70%;
   height: 25rem;
   background: #333;

@@ -6,7 +6,7 @@ import { Container, Image, DescriptionContainer, Title, Label, Text } from "../s
 export const DetailsCard = ({ image, title, description }) => {
   return (
     <Container>
-      <Image src={image === undefined ? pomegranate : `${image.thumbnail}`} />
+      <Image src={image === undefined ? pomegranate : `${image}`} />
       <DescriptionContainer>
         <Title>{title === undefined ? null : title}</Title>
         <Label>Description:</Label>

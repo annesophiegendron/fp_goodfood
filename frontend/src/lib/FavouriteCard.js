@@ -1,17 +1,13 @@
-import React from "react";
-import {
-  Image,
-  TextContainer,
-  DeleteButtonFav
-} from "../styles/styles_Favourites";
+import React from "react"
+import { Image, TextContainer, DeleteButtonFav } from "../styles/styles_Favourites"
 import { deleteFavourite } from "../fetch_data/favourites"
 
-import { OneFavourite } from "../styles/styles_Favourites"
+import { FavouriteItem } from "../styles/styles_Favourites"
 
 export const FavouriteCard = ({ favourites }) => {
   const fav = favourites.map(favourite => {
     return (
-      <OneFavourite>
+      <FavouriteItem>
         <Image src={favourite.image} />
        
         <TextContainer>
@@ -23,7 +19,7 @@ export const FavouriteCard = ({ favourites }) => {
           <span role="img" aria-labelledby="delete image">×</span>
         </DeleteButtonFav>
       
-      </OneFavourite>
+      </FavouriteItem>
     )
   })
 
