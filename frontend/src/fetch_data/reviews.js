@@ -1,6 +1,12 @@
 // GET REVIEWS FOR UNIQUE USER
 export const getReviews = (name, setReviews) => {
-  fetch(`https://goodfood-annesophie.herokuapp.com/profile?username=${name}`)
+  fetch(`https://goodfood-annesophie.herokuapp.com/profile?username=${name}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  })
     .then(res => res.json())
     .then(json => {
       setReviews(json);
