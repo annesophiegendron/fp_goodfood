@@ -14,6 +14,7 @@ import { getReviews } from "../fetch_data/reviews"
 
 export const Review = () => {
   const [reviews, setReviews] = useState([])
+
   const name = useSelector(store => store.auth.name)
   const loggedIn = useSelector(store => store.auth.loggedIn)
 
@@ -22,7 +23,7 @@ export const Review = () => {
   useEffect(() => {
     getReviews(name, setReviews)
   }, [name])
-
+  
   return (
     <Container>
       
@@ -49,7 +50,7 @@ export const Review = () => {
         <ErrorContainer>
           Access denied.
           <ErrorButton onClick={() => history.push("/")}>
-            Back to Main Page
+            back to main page
           </ErrorButton>
         </ErrorContainer>
       )}

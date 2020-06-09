@@ -1,9 +1,11 @@
+import { API_KEY } from '../fetch_data/constants'
+
 // WELCOME PAGE SEARCH BAR
 
 export const handleSubmit = (event, searchText, setRecipes, setSearchText) => {
   event.preventDefault();
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchText}&number=20&apiKey=eff3d2c7c763473ca8a93a295b37cf51`)
+    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchText}&number=20&apiKey=`+ API_KEY)
     .then(res => res.json())
     .then(json => {
       setRecipes(json)
@@ -21,7 +23,7 @@ export const fetchData = async (recipeId, setError, setDetails, setLoading) => {
   const api_key = "eff3d2c7c763473ca8a93a295b37cf51"
 
   const result = await fetch(
-    `https://api.spoonacular.com/recipes/${recipeId}/information?includeInstruction=true&apiKey=${api_key}`)
+    `https://api.spoonacular.com/recipes/${recipeId}/information?includeInstruction=true&apiKey=`+ API_KEY)
   const json = await result.json()
   if (json.status_code === 34) {
     setError(true)

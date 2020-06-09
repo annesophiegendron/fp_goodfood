@@ -7,6 +7,7 @@ import { Logout } from "../components/Logout"
 import { FavouriteCard } from "../components/FavouriteCard"
 
 import { getFavourites } from "../fetch_data/favourites"
+
 import { ErrorButton, ErrorContainer } from "../styles/styles_error"
 
 export const Favourites = () => {

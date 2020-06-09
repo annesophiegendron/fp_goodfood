@@ -1,8 +1,9 @@
+import { URL_ROOT } from '../fetch_data/constants'
+
 // ADD ITEM TO FAVOURITES
 
 export const addFavourite = recipe => {
-  // fetch(`https://goodfood-annesophie.herokuapp.com/like`, {
-    fetch(`http://localhost:8080/like`, {
+    fetch(URL_ROOT + `like`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -11,6 +12,7 @@ export const addFavourite = recipe => {
     body: JSON.stringify({
       id: recipe.favouriteId,
       title: recipe.title,
+      authors: recipe.authors,
       image: recipe.image,
       username: recipe.name,
     })
@@ -25,8 +27,7 @@ export const addFavourite = recipe => {
 // REMOVE ITEM FROM FAVOURITES
 
 export const deleteFavourite = favouriteId => {
-  // fetch(`https://goodfood-annesophie.herokuapp.com/favourites/${favouriteId}`, {
-    fetch(`http://localhost:8080/${favouriteId}`, {
+    fetch(URL_ROOT + `${favouriteId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -42,7 +43,13 @@ export const deleteFavourite = favouriteId => {
 // GET FAVOURITE ITEMS FOR UNIQUE USER
 
 export const getFavourites = (name, setFavourites) => {
-  fetch(`https://goodfood-annesophie.herokuapp.com/like?username=${name}`)
+  fetch(URL_ROOT + `like?username=${name}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  })
     .then(res => res.json())
     .then(json => {
       setFavourites(json);

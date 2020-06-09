@@ -1,8 +1,9 @@
+import { URL_ROOT } from '../fetch_data/constants'
+
 // GET REVIEWS FOR UNIQUE USER
 
 export const getReviews = (name, setReviews) => {
-  // fetch(`https://goodfood-annesophie.herokuapp.com/profile?username=${name}`, {
-    fetch(`http://localhost:8080/profile?username=${name}`, {
+  fetch(URL_ROOT + `profile?username=${name}`, {   
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -18,8 +19,7 @@ export const getReviews = (name, setReviews) => {
 // HANDLE DELETE REVIEW 
 
 export const handleDelete = reviewId => {
-  // fetch(`https://goodfood-annesophie.herokuapp.com/${reviewId}`, {
-    fetch(`http://localhost:8080/${reviewId}`, {
+  fetch(URL_ROOT + `${reviewId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -35,8 +35,7 @@ export const handleDelete = reviewId => {
 // GET REVIEWS FOR ONE RECIPE ITEM
 
 export const fetchReviews = (recipeId, setReviews) => {
-  // fetch(`https://goodfood-annesophie.herokuapp.com/review?recipeId=${recipeId}`)
-  fetch(`http://localhost:8080/review?recipeId=${recipeId}`)
+  fetch(URL_ROOT + `review?recipeId=${recipeId}`)
     .then(res => res.json())
     .then(json => {
       setReviews(json)
@@ -47,9 +46,7 @@ export const fetchReviews = (recipeId, setReviews) => {
 
 export const addReview = (recipe, setReviews, setUserReview, reviews, event) => {
   event.preventDefault();
-  // fetch(`https://goodfood-annesophie.herokuapp.com/review`, {
-    fetch(`http://localhost:8080/review`, {
-
+  fetch(URL_ROOT + `review`, {
     method: "POST",
     headers: {
       Accept: "application/json",
