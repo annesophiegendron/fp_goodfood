@@ -3,7 +3,7 @@ import { URL_ROOT } from '../fetch_data/constants'
 // HANDLE REGISTER
 
 export const handleRegister = (name, email, password, setErrorText, history) => {
-  fetch(URL_ROOT + `users`, {
+  fetch(URL_ROOT+ `users`, {
     method: "POST",
     body: JSON.stringify({ name, email, password }),
     headers: { "Content-Type": "application/json" }
@@ -25,7 +25,7 @@ export const handleRegister = (name, email, password, setErrorText, history) => 
 
 export const handleLoginUser = (event, auth, email, password, setErrorText, dispatch, history) => {
  event.preventDefault();
-  fetch(URL_ROOT + `sessions`, {
+  fetch(URL_ROOT+ `sessions`, {
     method: "POST",
     body: JSON.stringify({ email, password }),
     headers: {
