@@ -15,7 +15,7 @@ export const Favourites = () => {
 
   const name = useSelector(store => store.auth.name)
   const loggedIn = useSelector(store => store.auth.loggedIn)
-
+ 
   useEffect(() => {
     getFavourites(name, setFavourites)
   }, [name])

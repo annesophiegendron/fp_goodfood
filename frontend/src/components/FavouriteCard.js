@@ -8,8 +8,8 @@ export const FavouriteCard = ({ favourites }) => {
   const fav = favourites.map(favourite => {
     return (
       <FavouriteItem key={favourite.id}>
+        {/* <Image src={favourite.image} /> */}
         <Image src={favourite.image} />
-       
         <TextContainer>
           <h3>{favourite.title}</h3>
         </TextContainer>
