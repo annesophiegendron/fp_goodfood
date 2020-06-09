@@ -29,7 +29,7 @@ export const Details = () => {
 
   useEffect(() => {
     fetchData(recipeId, setError, setDetails, setLoading);
-  }, [])
+  }, [recipeId])
 
   useEffect(() => {
     fetchReviews(recipeId, setReviews)
@@ -61,7 +61,7 @@ export const Details = () => {
           ></DetailsCard>
          
           <HeaderReview>
-            Reviews
+            Add a review {name}!
           </HeaderReview>
           
           <Form onSubmit={addReview}>

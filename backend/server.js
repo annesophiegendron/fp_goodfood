@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 })
 
 // =================================================================
-//                           POST
+//                           POST ROUTES
 // =================================================================
 
 // https://goodfood-annesophie.herokuapp.com/
@@ -105,7 +105,7 @@ app.post("/like", async (req, res) => {
 
 
 // =================================================================
-//                            GET
+//                            GET ROUTES
 // =================================================================
 
 // SHOW REVIEWS (UNIQUE USER)
@@ -180,7 +180,7 @@ app.delete("/favourites/:favouriteId", async (req, res) => {
     }
   })
 })
-
+ 
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)

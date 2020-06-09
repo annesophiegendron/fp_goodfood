@@ -23,11 +23,15 @@ export const Favourites = () => {
 
   return (
     <Container>
+
       {loggedIn && (
         <>
           <Header>
             <ButtonContainer>
               <Logout></Logout>
+              <ClearButton onClick={() => history.push("/review")}>
+                reviews
+              </ClearButton>
               <ClearButton onClick={() => history.goBack()}>back</ClearButton>
             </ButtonContainer>
           </Header>

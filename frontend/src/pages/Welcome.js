@@ -20,6 +20,7 @@ export const Welcome = () => {
 
   const [recipes, setRecipes] = useState(recipesArray)
   const [searchText, setSearchText] = useState("")
+  // eslint-disable-next-line
   const [message, setMessage] = useState(false)
 
   const history = useHistory()

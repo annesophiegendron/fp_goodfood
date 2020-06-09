@@ -16,12 +16,10 @@ export const handleSubmit = (event, searchText, setRecipes, setSearchText) => {
       console.log(error)
     })
 }
-
+ 
 // DETAILS PAGE
 
 export const fetchData = async (recipeId, setError, setDetails, setLoading) => {
-  const api_key = "eff3d2c7c763473ca8a93a295b37cf51"
-
   const result = await fetch(
     `https://api.spoonacular.com/recipes/${recipeId}/information?includeInstruction=true&apiKey=`+ API_KEY)
   const json = await result.json()
