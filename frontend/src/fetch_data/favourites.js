@@ -3,7 +3,7 @@ import { URL_ROOT } from '../fetch_data/constants'
 // ADD ITEM TO FAVOURITES
 
 export const addFavourite = recipe => {
-    fetch(URL_ROOT + `like`, {
+    fetch(URL_ROOT+`like`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -27,7 +27,7 @@ export const addFavourite = recipe => {
 // REMOVE ITEM FROM FAVOURITES
 
 export const deleteFavourite = favouriteId => {
-    fetch(URL_ROOT + `favourites/${favouriteId}`, {
+  fetch(URL_ROOT + `favourites/${favouriteId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -43,7 +43,7 @@ export const deleteFavourite = favouriteId => {
 // GET FAVOURITE ITEMS FOR UNIQUE USER
 
 export const getFavourites = (name, setFavourites) => {
-  fetch(URL_ROOT + `like?username=${name}`, {
+  fetch(URL_ROOT+`like?username=${name}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
