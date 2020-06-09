@@ -7,8 +7,12 @@ import { FavouriteItem } from "../styles/styles_Favourites"
 
 export const FavouriteCard = ({ favourites }) => {
   const fav = favourites.map(favourite => {
+// export const FavouriteCard = props => {
+//   const { favourites } = props
+  
+      // const fav = favourites.map(favourite => {
     return (
-      <FavouriteItem key={favourite.id}>
+      <FavouriteItem key={favourite._id}>
         <Image src={favourite.image} />
         <TextContainer>
           <h3>{favourite.title}</h3>

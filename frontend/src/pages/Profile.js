@@ -14,7 +14,6 @@ import kiwi from "../assets/images/kiwi.jpg"
 
 export const Profile = () => {
   const history = useHistory()
-  const name = useSelector(store => store.auth.name)
   const loggedIn = useSelector(store => store.auth.loggedIn)
 
   return (

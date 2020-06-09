@@ -27,7 +27,7 @@ export const addFavourite = recipe => {
 // REMOVE ITEM FROM FAVOURITES
 
 export const deleteFavourite = favouriteId => {
-    fetch(URL_ROOT + `${favouriteId}`, {
+    fetch(URL_ROOT + `favourites/${favouriteId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -39,7 +39,7 @@ export const deleteFavourite = favouriteId => {
       window.location.reload()
     })
 }
-
+ 
 // GET FAVOURITE ITEMS FOR UNIQUE USER
 
 export const getFavourites = (name, setFavourites) => {

@@ -11,7 +11,7 @@ export const Logout = () => {
 
   //LOG OUT
   const handleLogOut = () => {
-    history.push("/login")
+    history.push("/")
     dispatch(auth.actions.setLoggedOut())
   }
 

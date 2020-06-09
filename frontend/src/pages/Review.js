@@ -14,11 +14,10 @@ import { getReviews } from "../fetch_data/reviews"
 
 export const Review = () => {
   const [reviews, setReviews] = useState([])
+  const history = useHistory()
 
   const name = useSelector(store => store.auth.name)
   const loggedIn = useSelector(store => store.auth.loggedIn)
-
-  const history = useHistory()
 
   useEffect(() => {
     getReviews(name, setReviews)
@@ -26,7 +25,7 @@ export const Review = () => {
   
   return (
     <Container>
-      
+       
       {loggedIn && (
         <>
           <Header>
@@ -37,7 +36,7 @@ export const Review = () => {
               </ClearButton>
               <ClearButton onClick={() => history.goBack()}>back</ClearButton>
             </ButtonContainer>
-            <UserContainer>logged account: {name}</UserContainer>
+            <UserContainer>{name}'s account</UserContainer>
           </Header>
           <MainTitle>
             Your reviews
