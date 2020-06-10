@@ -9,8 +9,9 @@ export const DetailsCard = ({ image, title, description }) => {
       <Image src={image === undefined ? pomegranate : `${image}`} />
       <DescriptionContainer>
         <Title>{title === undefined ? null : title}</Title>
-        <Label>Description:</Label>
+        <Label>Preparation:</Label>
         <Text>{description}</Text>
+        <Label>Ingredients:</Label>
       </DescriptionContainer>
     </Container>
   )

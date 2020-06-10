@@ -35,14 +35,11 @@ background: black;
 
 export const HeaderReview = styled.h2`
   text-align: center;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 15px;
+  color: #3C3D40;
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
-  @media (min-width: 900px) {
-    font-size: 2.5rem;
-  }
-`;
+`
 
 export const InputReview = styled.textarea`
   width: 100%;
@@ -54,8 +51,8 @@ export const InputReview = styled.textarea`
 
 export const ButtonReview = styled.button`
   margin-top: 1rem;
-  width: 12rem;
-  height: 3rem;
+  width: 9rem;
+  height: 2.5rem;
   color: #F2F2F2;
   background: #0D0D0D;
   border: 1px solid #0D0D0D;

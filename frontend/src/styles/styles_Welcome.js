@@ -1,8 +1,10 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-// Welcome user messsage Navbar
+// =========================================================
+//                     WELCOME USER NAVBAR
+// =========================================================
 export const HeaderName = styled.button`
-margin-left: 1rem;
+  margin-left: 1rem;
   color: black;
   background: white;
   border: 1px solid white;
@@ -34,12 +36,12 @@ margin-left: 1rem;
   }
   `
 // =========================================================
-// //                   FORM CONTAINER
+//                      FORM CONTAINER
 // =========================================================
 export const FormContainer = styled.div`
 background: #fff;
   width: 100%;
-  height: 500px;
+  height: 600px;
   position: relative;
   top: 0;
   bottom: 0;
@@ -59,7 +61,6 @@ background: #fff;
 export const BackgroundImage = styled.img`
   width: 100%;
   height: 100%;
-  opacity: 0.;
   object-fit: cover;
 `
 
@@ -74,8 +75,7 @@ export const Form = styled.form`
   text-align: left;
   margin-right: 2rem;
   position: absolute;
-  top: 30%;
-
+  top: 35%;
 `
 
 export const Input = styled.input`
@@ -85,92 +85,101 @@ export const Input = styled.input`
   font-size: 15px;
   padding: 1.5rem;
   border: #A6A6A6 solid 1px;
-  width: 15rem;
+  width: 13rem;
   margin-right: 2rem;
 `
-
+ 
 // =========================================================
-// //                   COLLECTION CONTAINER
+//                     COLLECTION CONTAINER
 // =========================================================
-export const HeartButton = styled.button`
-  font-size: 1.5rem;
-  z-index: 100;
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 1;
-  cursor: pointer;
-  text-decoration: none;
-  background: transparent;
-  border: none;
-  :hover {
-    opacity: 0.5;
-  }
-`
-
-export const Image = styled.img`
-  grid-row: 1 / span 2;
-  grid-column: 1 / span 3;
-  background-position: center;
-  object-fit: contain;
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
-  height: 100%;
-  justify-self: center;
-  align-self: center;
 `
 
-export const DetailsContainer = styled.div`
-  grid-row: 3 / -1;
-  grid-column: 1 / -1;
-  text-align: left;
-  z-index: 100;
+export const CollectionButton = styled.button`
+  width: 6rem;
+  height: 2rem;
+  color: #F2F2F2;
+  background: #0D0D0D;
+  padding-top: 6px;
+  padding-bottom: 2px;
+  border: 1px solid #0D0D0D;
+  text-align: center;
   font-family: "Roboto", sans-serif;
-  font-size: 13px;
   letter-spacing: 1px;
-  overflow: hidden;
-  border-bottom: #F2F2F2 solid 1px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+    :hover {
+      color: #000;
+      background: #fff;
+      border: 2px solid #000;
+      transition: all 0.4s ease-in-out;
+    } 
 `
 
-export const OneCard = styled.div`
-  width: 70%;
-  height: 25rem;
-  background: #FFFFF;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  display: grid;
-  grid-template-columns: 15% 70% 15%;
-  grid-template-rows: 10% 45% 30% 10% 5%;
-  justify-content: center;
-  align-content: top;
-  border: 1px solid white;
-  border-radius: 10px;
-  &:hover ${Image} {
-    transition: transform 1s;
-    transform: scale(1.01); 
-    opacity:0.8;
-  }
-  @media (min-width: 568px) {
-    width: 45%;
-  }
-  @media (min-width: 900px) {
-    width: 22%;
-  }
-`
-
-export const DetailsButton = styled.button`
-  width: 14rem;
-  grid-row: 4 / span 1;
-  grid-column: 2 / span 1;
-  z-index: 100;
+export const AddButton = styled.button`
+  width: 6rem;
+  height: 2rem;
+  margin-left: 2rem;
+  padding-top: 6px;
   color: #F2F2F2;
   background: #0D0D0D;
   border: 1px solid #0D0D0D;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  text-transform: uppercase;
   cursor: pointer;
-  :hover {
-    color: #000;
-    background: #fff;
-    border: 4px solid #fff;
-    transition: all 0.4s ease-in-out;
+    :hover {
+      color: #000;
+      background: #fff;
+      border: 2px solid #000;
+      transition: all 0.4s ease-in-out;
+    } 
+`
+
+export const Image = styled.img`
+  background-position: center;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 80%;
+  height: 80%;
+  justify-self: center;
+  align-self: center;
+`
+
+export const DetailsContainer = styled.div`
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  border-bottom: #F2F2F2 solid 1px;
+  margin-bottom: 5px;
+`
+
+export const OneCard = styled.div`
+  width: 100%;
+  background: #fff;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: top;
+  padding: 25px;
+    
+  &:hover ${Image} {
+    transition: transform 1s;
+    transform: scale(1.01); 
+    opacity:0.8;
+  }
+    @media (min-width: 600px) {
+    width: 400px;
   }
 `

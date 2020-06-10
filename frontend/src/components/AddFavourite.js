@@ -1,7 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux"
 
-import { HeartButton } from "../styles/styles_Welcome"
+import { AddButton } from "../styles/styles_Welcome"
 import { addFavourite } from "../fetch_data/favourites"
 
 export const AddFavourite = ({ title, image, favouriteId }) => {
@@ -10,9 +10,9 @@ export const AddFavourite = ({ title, image, favouriteId }) => {
 
   return (
     <>
-      <HeartButton role="img" onClick={() => addFavourite(recipe)}>
-      <span role="img" aria-labelledby="heart">➕</span>
-      </HeartButton>
+      <AddButton onClick={() => addFavourite(recipe)}>Love it
+      <span role="img" aria-labelledby="heart">❤︎</span>
+      </AddButton>
     </>
   )
 }

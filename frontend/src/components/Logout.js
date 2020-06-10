@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { auth } from "../reducers/auth"
 
+import swal from 'sweetalert'
+
 import { Button } from "../styles/styles_Logout"
 
 export const Logout = () => {
@@ -15,5 +17,20 @@ export const Logout = () => {
     dispatch(auth.actions.setLoggedOut())
   }
 
-  return <Button onClick={handleLogOut}>log out</Button>;
+  return <Button
+    onClick={() => swal({
+      title: "Are you sure?",
+      dangerMode: true,
+      buttons: true,
+    })
+      .then((willQuit) => {
+        if (willQuit) {
+          history.push("/")
+          dispatch(auth.actions.setLoggedOut())
+        } else {
+          swal("❤︎");
+      }
+    })
+    }>logout
+    </Button>
 }
