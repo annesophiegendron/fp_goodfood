@@ -39,7 +39,7 @@ margin-left: 1rem;
 export const FormContainer = styled.div`
 background: #fff;
   width: 100%;
-  height: 500px;
+  height: 600px;
   position: relative;
   top: 0;
   bottom: 0;
@@ -74,8 +74,7 @@ export const Form = styled.form`
   text-align: left;
   margin-right: 2rem;
   position: absolute;
-  top: 30%;
-
+  top: 35%;
 `
 
 export const Input = styled.input`
@@ -85,14 +84,14 @@ export const Input = styled.input`
   font-size: 15px;
   padding: 1.5rem;
   border: #A6A6A6 solid 1px;
-  width: 15rem;
+  width: 13rem;
   margin-right: 2rem;
 `
 
 // =========================================================
 // //                   COLLECTION CONTAINER
 // =========================================================
-export const HeartButton = styled.button`
+export const PlusButton = styled.button`
   font-size: 1.5rem;
   z-index: 100;
   grid-row: 1 / span 1;
@@ -110,7 +109,8 @@ export const Image = styled.img`
   grid-row: 1 / span 2;
   grid-column: 1 / span 3;
   background-position: center;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   justify-self: center;
@@ -130,7 +130,7 @@ export const DetailsContainer = styled.div`
 `
 
 export const OneCard = styled.div`
-  width: 70%;
+  width: 60%;
   height: 25rem;
   background: #FFFFF;
   margin: 0 auto;
@@ -141,22 +141,21 @@ export const OneCard = styled.div`
   justify-content: center;
   align-content: top;
   border: 1px solid white;
-  border-radius: 10px;
   &:hover ${Image} {
     transition: transform 1s;
     transform: scale(1.01); 
     opacity:0.8;
   }
-  @media (min-width: 568px) {
-    width: 45%;
-  }
+  // @media (min-width: 568px) {
+  //   width: 45%;
+  // }
   @media (min-width: 900px) {
     width: 22%;
   }
 `
 
 export const DetailsButton = styled.button`
-  width: 14rem;
+  width: 13rem;
   grid-row: 4 / span 1;
   grid-column: 2 / span 1;
   z-index: 100;
@@ -170,7 +169,7 @@ export const DetailsButton = styled.button`
   :hover {
     color: #000;
     background: #fff;
-    border: 4px solid #fff;
+    border: 2px solid #000;
     transition: all 0.4s ease-in-out;
   }
 `

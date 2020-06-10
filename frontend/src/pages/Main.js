@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom"
 import { Video, Middle, WelcomeMessage, Navbar, Link, Container } from "../styles/styles_Main"
 
 import { MainRegisterButton } from '../lib/Main_RegisterButton'
+import { TextSection } from '../lib/TextSection'
+
 
 import kitchen from "../assets/videos/kitchen.mp4"
 
@@ -11,6 +13,7 @@ export const Main = () => {
   const history = useHistory()
 
   return (
+    <>
     <Container>
       <Video autoPlay playsInline muted loop>
         <source src={kitchen} type="video/mp4"></source>
@@ -25,5 +28,8 @@ export const Main = () => {
         <MainRegisterButton />
       </Middle>
     </Container>
+      
+      <TextSection />
+      </>
   )
 }

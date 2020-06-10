@@ -1,16 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  flex-direction: column;
+  // flex-direction: column;
   display: flex;
-  width: 80%;
-  position: relative;
-  top: 70px;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
   margin: auto;
-  background: white;
 
   @media (min-width: 600px) {
     width: 100%;
@@ -26,9 +21,10 @@ export const Form = styled.div`
   font-family: 'Roboto', sans-serif;
   border: solid 1px #595857;
   border-radius: 10px;
-  margin: 50px auto;
+  margin: 200px auto;
   padding: 40px 30px 30px 30px;
   max-width: 500px;
+  background-color: white;
 `
 
 export const Label = styled.label`

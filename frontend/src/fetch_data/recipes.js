@@ -5,15 +5,15 @@ import { API_KEY } from '../fetch_data/constants'
 export const handleSubmit = (event, searchText, setRecipes, setSearchText) => {
   event.preventDefault();
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchText}&number=20&apiKey=`+ API_KEY)
+    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchText}&number=10&apiKey=`+ API_KEY)
     .then(res => res.json())
     .then(json => {
       setRecipes(json)
       sessionStorage.setItem("recipesArray")
       setSearchText("")
     })
-    .catch(error => {
-      console.log(error)
+    .catch((error, errorInfo) => {
+      console.log(error, errorInfo)
     })
 }
  

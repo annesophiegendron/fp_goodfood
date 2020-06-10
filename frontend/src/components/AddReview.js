@@ -17,7 +17,7 @@ export const AddReview = ({ title, description, setReviews, setUserReview, revie
           addReview(recipe, setReviews, setUserReview, reviews, event)
         }
       >
-        Submit reviews
+        Submit review
       </ButtonReview>
     </>
   )

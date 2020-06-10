@@ -14,9 +14,10 @@ import { HeaderName, FormTitle, Form, Input, OneCard, BackgroundImage, DetailsBu
 import { ClearButton, Container, Header, ButtonContainer, CardContainer } from "../styles/styles_global"
 
 import fruits from "../assets/images/fruits.jpg"
-
+ 
 export const Welcome = () => {
   const recipesArray = JSON.parse(window.sessionStorage.getItem("recipesArray"))
+
 
   const [recipes, setRecipes] = useState(recipesArray)
   const [searchText, setSearchText] = useState("")
