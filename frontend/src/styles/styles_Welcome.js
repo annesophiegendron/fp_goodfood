@@ -92,16 +92,47 @@ export const Input = styled.input`
 // =========================================================
 //                     COLLECTION CONTAINER
 // =========================================================
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+`
+
 export const CollectionButton = styled.button`
-  idth: 12rem;
-  z-index: 100;
+  width: 6rem;
+  height: 2rem;
+  color: #F2F2F2;
+  background: #0D0D0D;
+  padding-top: 6px;
+  padding-bottom: 2px;
+  border: 1px solid #0D0D0D;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+    :hover {
+      color: #000;
+      background: #fff;
+      border: 2px solid #000;
+      transition: all 0.4s ease-in-out;
+    } 
+`
+
+export const AddButton = styled.button`
+  width: 6rem;
+  height: 2rem;
+  margin-left: 2rem;
+  padding-top: 6px;
   color: #F2F2F2;
   background: #0D0D0D;
   border: 1px solid #0D0D0D;
   text-align: center;
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
   cursor: pointer;
     :hover {
@@ -116,19 +147,20 @@ export const Image = styled.img`
   background-position: center;
   object-fit: cover;
   border-radius: 10px;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   justify-self: center;
   align-self: center;
 `
 
 export const DetailsContainer = styled.div`
-  text-align: left;
+  text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 13px;
   letter-spacing: 1px;
   overflow: hidden;
   border-bottom: #F2F2F2 solid 1px;
+  margin-bottom: 5px;
 `
 
 export const OneCard = styled.div`
@@ -149,25 +181,5 @@ export const OneCard = styled.div`
   }
     @media (min-width: 600px) {
     width: 400px;
-  }
-`
-
-export const DetailsButton = styled.button`
-  display: flex;
-  width: 4rem;
-  color: #F2F2F2;
-  background: #0D0D0D;
-  border: 1px solid #0D0D0D;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 1px;
-  font-size: 10px;
-  text-transform: uppercase;
-  cursor: pointer;
-  :hover {
-    color: #000;
-    background: #fff;
-    border: 2px solid #000;
-    transition: all 0.4s ease-in-out;
   }
 `

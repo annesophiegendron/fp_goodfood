@@ -60,8 +60,8 @@ export const Details = () => {
             title={details.title}
             image={details.image}
             description={details.description}
-          ></DetailsCard>
-         
+            ></DetailsCard>
+            
           <HeaderReview>
             Add a review {name}!
           </HeaderReview>

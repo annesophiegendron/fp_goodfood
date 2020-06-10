@@ -3,8 +3,6 @@ import { useHistory } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-import instagram from '../assets/svg/instagram.svg'
-
 export const Container = styled.div`
 box-sizing: content-box;
 height: 300px;
@@ -44,7 +42,7 @@ export const Text = styled.a`
   }
 `
 
-export const TextSection = styled.button`
+export const Button = styled.button`
   margin-top: 6rem;
   width: 220px;
   height: 50px;
@@ -123,8 +121,8 @@ export const Footer = () => {
         <Link onClick={() => history.push("/review")}>reviews</Link>
         <Link onClick={() => history.push("/welcome")}>search</Link>
       </LinkWrapper>
-      <TextSection>
-        <Text  href="https://www.linkedin.com/in/anne-sophie-gendron/" target="_blank">anne-sophie gendron @2020</Text>
-      </TextSection>
+      <Button>
+        <Text  href="https://github.com/annesophiegendron" target="_blank">anne-sophie gendron @2020</Text>
+      </Button>
     </Container>)
 }

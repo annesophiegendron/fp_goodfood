@@ -10,7 +10,7 @@ import { RecipeCard } from "../components/RecipeCard"
 
 import { handleSubmit } from "../fetch_data/recipes"
  
-import { HeaderName, FormTitle, Form, Input, OneCard, BackgroundImage, CollectionButton, FormContainer } from "../styles/styles_Welcome"
+import { HeaderName, FormTitle, Form, Input, OneCard, BackgroundImage, CollectionButton, FormContainer, ButtonWrapper } from "../styles/styles_Welcome"
 import { ClearButton, Container, Header, ButtonContainer, CardContainer } from "../styles/styles_global"
 
 import { Footer } from '../components/Footer'
@@ -82,10 +82,10 @@ export const Welcome = () => {
                   title={recipe.title}
                 ></RecipeCard>
 
+            <ButtonContainer>
                 <CollectionButton
                   onClick={() => history.push(`/details/${recipe.id}`)}
-                >
-                  show details
+                >details
                 </CollectionButton>
 
                 <AddFavourite
@@ -97,7 +97,9 @@ export const Welcome = () => {
                       : `${recipe.image}`
                   }
                   favouriteId={recipe.id}
-                ></AddFavourite>
+                  ></AddFavourite>
+              </ButtonContainer>
+                
               </OneCard>
             )
           })}
