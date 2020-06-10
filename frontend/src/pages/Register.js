@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 
 import { Container, Form, Title, Label, Input, SubmitButton} from "../styles/styles_Register"
+import { Footer } from '../components/Footer'
 
 import { handleRegister } from "../fetch_data/auth"
 
@@ -13,6 +14,7 @@ export const Register = () => {
   const history = useHistory()
 
   return (
+    <>
     <Container>
       <Form>
         <Title>Create a new account</Title>
@@ -50,8 +52,13 @@ export const Register = () => {
           background="#8985F2"
           hover="#312F73"
           type="button"
-        >sign-in</SubmitButton>
-      </Form>
-    </Container>
+          >sign-in</SubmitButton>
+          
+        </Form>
+        
+      </Container>
+
+      <Footer />
+      </>
   )
 }

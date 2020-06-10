@@ -13,6 +13,8 @@ import { handleSubmit } from "../fetch_data/recipes"
 import { HeaderName, FormTitle, Form, Input, OneCard, BackgroundImage, DetailsButton, FormContainer } from "../styles/styles_Welcome"
 import { ClearButton, Container, Header, ButtonContainer, CardContainer } from "../styles/styles_global"
 
+import { Footer } from '../components/Footer'
+
 import fruits from "../assets/images/fruits.jpg"
  
 export const Welcome = () => {
@@ -35,6 +37,7 @@ export const Welcome = () => {
   }
 
   return (
+    <>
     <Container>
       {loggedIn && (
         <div>
@@ -107,6 +110,8 @@ export const Welcome = () => {
           </ErrorButton>
         </ErrorContainer>
       )}
-    </Container>
+      </Container>
+      <Footer />
+      </>
   )
 }

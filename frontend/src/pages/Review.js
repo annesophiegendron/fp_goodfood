@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom"
 
 import { ReviewCard } from "../components/ReviewCard"
 import { Logout } from "../components/Logout"
+import { Footer } from '../components/Footer'
 
 import { ErrorButton, ErrorContainer } from "../styles/styles_error"
 
@@ -24,6 +25,7 @@ export const Review = () => {
   }, [name])
   
   return (
+    <>
     <Container>
        
       {loggedIn && (
@@ -54,6 +56,8 @@ export const Review = () => {
         </ErrorContainer>
       )}
 
-    </Container>
+      </Container>
+      <Footer />
+      </>
   )
 }

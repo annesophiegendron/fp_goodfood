@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 
 import { Logout } from "../components/Logout"
+import { Footer } from '../components/Footer'
 
 import { Container, Header, MainTitle, ButtonContainer, ClearButton } from "../styles/styles_global"
 
@@ -17,6 +18,7 @@ export const Profile = () => {
   const loggedIn = useSelector(store => store.auth.loggedIn)
 
   return (
+    <>
     <Container>
       
       {loggedIn && (
@@ -50,6 +52,8 @@ export const Profile = () => {
         </ErrorContainer>
       )}
       
-    </Container>
+      </Container>
+      <Footer />
+      </>
   )
 }

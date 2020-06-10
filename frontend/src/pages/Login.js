@@ -2,7 +2,8 @@ import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux"
 
-import { Container, Form, Label, Input, Title, SubmitButton } from "../styles/styles_Login"
+import { Container, Form, Label, Input, Title, SubmitButton, RegisterText } from "../styles/styles_Login"
+import { Footer } from '../components/Footer'
 
 import { Error } from "../styles/styles_Register"
 
@@ -17,10 +18,9 @@ export const Login = () => {
   const dispatch = useDispatch()
 
   return (
+    <>
     <Container>
-           
       <Form>
-
       <Title>Already a member? Sign-in here!</Title>
         <Label>email</Label>
             <Input
@@ -42,8 +42,16 @@ export const Login = () => {
           >Login</SubmitButton>
         {errorText && <Error>User not found, access denied. Please try again.</Error>}
           
+        <RegisterText>Don't have an account? Sign-up here:</RegisterText>
+        <SubmitButton
+          onClick={() => history.push("/register")}
+          background="#8985F2"
+          hover="#312F73"
+          type="button"
+          >sign-up</SubmitButton>
       </Form>
-
-    </Container>
+      </Container>
+      <Footer />
+      </>
   )
 }

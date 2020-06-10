@@ -5,6 +5,7 @@ import { useSelector } from "react-redux"
 import { Container, Header, ButtonContainer, ClearButton, MainTitle, CardContainer } from "../styles/styles_global"
 import { Logout } from "../components/Logout"
 import { FavouriteCard } from "../components/FavouriteCard"
+import { Footer } from '../components/Footer'
 
 import { getFavourites } from "../fetch_data/favourites"
 
@@ -22,6 +23,7 @@ export const Favourites = () => {
   }, [name])
 
   return (
+    <>
     <Container>
 
       {loggedIn && (
@@ -52,6 +54,8 @@ export const Favourites = () => {
           </ErrorButton>
         </ErrorContainer>
       )}
-    </Container>
+      </Container>
+      <Footer />
+      </>
   )
 }

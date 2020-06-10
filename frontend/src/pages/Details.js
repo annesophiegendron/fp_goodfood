@@ -5,6 +5,7 @@ import { useSelector } from "react-redux"
 import { DetailsReview } from "../components/DetailsReview"
 import { Logout } from "../components/Logout"
 import { DetailsCard } from "../components/DetailsCard"
+import { Footer } from '../components/Footer'
 
 import { fetchData } from "../fetch_data/recipes"
 import { fetchReviews, addReview } from "../fetch_data/reviews"
@@ -36,6 +37,7 @@ export const Details = () => {
   }, [recipeId])
 
   return (
+    <>
     <Container className="details-section">
       {loading && !error && loggedIn && <Loader className="loading"></Loader>}
       {error && loggedIn && <h2 className="loading">recipe not found</h2>}
@@ -93,6 +95,8 @@ export const Details = () => {
           <button onClick={() => history.push("/")}>Back to Main Page</button>
         </div>
       )}
-    </Container>
+      </Container>
+      <Footer />
+    </>
   )
 }

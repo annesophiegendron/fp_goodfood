@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  // flex-direction: column;
   display: flex;
   width: 100%;
   height: 100%;
   margin: auto;
+  background: #ffffff;
 
   @media (min-width: 600px) {
     width: 100%;
@@ -15,16 +15,23 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   color: #595857;
+  font-size: 23px;
+  padding-bottom: 6rem;
+  letter-spacing: 1px;
 `
 
 export const Form = styled.div`
   font-family: 'Roboto', sans-serif;
-  border: solid 1px #595857;
+  border: solid 1px #eee;
   border-radius: 10px;
-  margin: 200px auto;
+  margin: 100px auto;
   padding: 40px 30px 30px 30px;
-  max-width: 500px;
-  background-color: white;
+  max-width: 400px;
+  height: 490px;
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow:  5px 5px 50px #d9d9d9, 
+               -5px -5px 60px #ffffff;
 `
 
 export const Label = styled.label`
@@ -55,7 +62,8 @@ transform: translate(-50 %, -50 %);
 display: block;
 width: 30%;
 margin: 0 auto;
-padding: 15px;
+margin-bottom: 3rem;
+padding: 14px;
 cursor: pointer;
 outline: none;
 overflow: hidden;
@@ -64,7 +72,8 @@ text-align: center;
 position: relative;
 font-size: 12px;
 font-family: 'Roboto', sans-serif;
-font-weight: bold;
+font-weiht: 600;
+letter-spacing: 1px;
 text-decoration: none;
 border: 3px solid white;
 background: #333;
@@ -79,11 +88,17 @@ transition: all .35s;
 }
 
 @media (min-width: 600px) {
-  font-size: 15px;
+  font-size: 14px;
   width: 40%;
 
   :hover{
     width: 140px;
   }
 }
+`
+
+export const RegisterText = styled.p`
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
 `
