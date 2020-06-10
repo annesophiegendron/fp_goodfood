@@ -1,4 +1,5 @@
 import { URL_ROOT } from '../fetch_data/constants'
+import swal from 'sweetalert'
 
 // ADD ITEM TO FAVOURITES
 
@@ -21,7 +22,10 @@ export const addFavourite = recipe => {
     .then(json => {
       console.log(json);
     })
-  alert("The recipe is added to your favourites!")
+  swal({
+      text: "The recipe has successfully been added to your favourites!",
+      icon: "success",
+    });
 }
 
 // REMOVE ITEM FROM FAVOURITES

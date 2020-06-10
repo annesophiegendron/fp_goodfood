@@ -10,7 +10,8 @@ export const AddFavourite = ({ title, image, favouriteId }) => {
 
   return (
     <>
-      <AddButton onClick={() => addFavourite(recipe)}>Love it
+      <AddButton
+        onClick={() => addFavourite(recipe)}>Love it
       <span role="img" aria-labelledby="heart">❤︎</span>
       </AddButton>
     </>
