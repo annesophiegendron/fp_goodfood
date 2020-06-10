@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 
-import { Container, Form, Title, Label, Input, SubmitButton} from "../styles/styles_Register"
+import { Container, Form, Title, Label, Input, SubmitButton, RegisterText} from "../styles/styles_Auth"
 import { Footer } from '../components/Footer'
 
 import { handleRegister } from "../fetch_data/auth"
@@ -17,7 +17,7 @@ export const Register = () => {
     <>
     <Container>
       <Form>
-        <Title>Create a new account</Title>
+        <Title>Create a new account <span role="img" aria-labelledby="celebrate image">🎉</span></Title>
 
         <Label>name</Label>
         <Input
@@ -46,7 +46,7 @@ export const Register = () => {
 
         {errorText && <p>Could not create user, please try again.</p>}
 
-        <p>Already have an account?</p>
+        <RegisterText>Already have an account?</RegisterText>
         <SubmitButton
           onClick={() => history.push("/login")}
           background="#8985F2"

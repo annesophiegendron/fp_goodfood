@@ -6,10 +6,9 @@ import { Container, Header, ButtonContainer, ClearButton, MainTitle, CardContain
 import { Logout } from "../components/Logout"
 import { FavouriteCard } from "../components/FavouriteCard"
 import { Footer } from '../components/Footer'
+import { AccessError } from '../components/AccessError'
 
 import { getFavourites } from "../fetch_data/favourites"
-
-import { ErrorButton, ErrorContainer } from "../styles/styles_error"
 
 export const Favourites = () => {
   const [favourites, setFavourites] = useState([])
@@ -46,13 +45,8 @@ export const Favourites = () => {
         </>
       )}
       
-      {!loggedIn && (
-        <ErrorContainer>
-          Access denied.
-          <ErrorButton onClick={() => history.push("/")}>
-            Back to Main Page
-          </ErrorButton>
-        </ErrorContainer>
+        {!loggedIn && (
+          <AccessError />
       )}
       </Container>
       <Footer />

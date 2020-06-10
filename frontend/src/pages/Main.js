@@ -5,7 +5,7 @@ import { Video, Middle, WelcomeMessage, Navbar, Link, Container } from "../style
 
 import { MainRegisterButton } from '../lib/Main_RegisterButton'
 import { TextSection } from '../lib/TextSection'
-
+import { Footer } from '../components/Footer'
 
 import kitchen from "../assets/videos/kitchen.mp4"
 
@@ -30,6 +30,7 @@ export const Main = () => {
     </Container>
       
       <TextSection />
+      <Footer />
       </>
   )
 }

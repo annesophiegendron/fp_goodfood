@@ -7,16 +7,16 @@ export const Container = styled.div`
   margin: auto;
   background: #ffffff;
 
-  @media (min-width: 600px) {
-    width: 100%;
-    height: 100%;
+    @media (min-width: 600px) {
+     width: 100%;
+     height: 100%;
   }
 `
 
 export const Title = styled.h1`
   color: #595857;
   font-size: 23px;
-  padding-bottom: 6rem;
+  padding-bottom: 4rem;
   letter-spacing: 1px;
 `
 
@@ -31,7 +31,7 @@ export const Form = styled.div`
   border-radius: 50px;
   background: #ffffff;
   box-shadow:  5px 5px 50px #d9d9d9, 
-               -5px -5px 60px #ffffff;
+             -5px -5px 60px #ffffff;
 `
 
 export const Label = styled.label`
@@ -94,11 +94,19 @@ transition: all .35s;
   :hover{
     width: 140px;
   }
-}
+} 
 `
-
 export const RegisterText = styled.p`
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
   font-size: 12px;
+`
+
+export const Error = styled.div`
+  grid-column: 2 / span 3;
+  grid-row: 5 / span 1;
+  text-align: center;
+  align-self: center;
+  color: red;
+  font-family: "Roboto", sans-serif;
 `

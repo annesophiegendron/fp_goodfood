@@ -1,6 +1,8 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-// Welcome user messsage Navbar
+// =========================================================
+//                     WELCOME USER NAVBAR
+// =========================================================
 export const HeaderName = styled.button`
 margin-left: 1rem;
   color: black;
@@ -34,7 +36,7 @@ margin-left: 1rem;
   }
   `
 // =========================================================
-// //                   FORM CONTAINER
+//                      FORM CONTAINER
 // =========================================================
 export const FormContainer = styled.div`
 background: #fff;
@@ -88,7 +90,7 @@ export const Input = styled.input`
 `
 
 // =========================================================
-// //                   COLLECTION CONTAINER
+//                     COLLECTION CONTAINER
 // =========================================================
 export const PlusButton = styled.button`
   font-size: 1.5rem;

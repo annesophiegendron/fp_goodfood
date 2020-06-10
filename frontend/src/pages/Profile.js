@@ -4,11 +4,11 @@ import { useHistory } from "react-router-dom"
 
 import { Logout } from "../components/Logout"
 import { Footer } from '../components/Footer'
+import { AccessError } from '../components/AccessError'
 
 import { Container, Header, MainTitle, ButtonContainer, ClearButton } from "../styles/styles_global"
 
 import { FlexContainer, Image, Button, Text } from "styles/styles_Profile"
-import { ErrorButton, ErrorContainer } from "../styles/styles_error"
 
 import orange from "../assets/images/orange.jpg"
 import kiwi from "../assets/images/kiwi.jpg"
@@ -43,13 +43,8 @@ export const Profile = () => {
         </>
       )}
 
-      {!loggedIn && (
-        <ErrorContainer>
-          Access denied{" "}
-          <ErrorButton onClick={() => history.push("/")}>
-            Back to Main Page
-          </ErrorButton>
-        </ErrorContainer>
+        {!loggedIn && (
+          <AccessError />       
       )}
       
       </Container>

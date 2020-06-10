@@ -5,8 +5,7 @@ import { useHistory } from "react-router-dom"
 import { ReviewCard } from "../components/ReviewCard"
 import { Logout } from "../components/Logout"
 import { Footer } from '../components/Footer'
-
-import { ErrorButton, ErrorContainer } from "../styles/styles_error"
+import { AccessError } from '../components/AccessError'
 
 import { UserContainer } from "../styles/styles_Review"
 import { Container, ClearButton, Header, ButtonContainer, MainTitle } from "../styles/styles_global"
@@ -47,13 +46,8 @@ export const Review = () => {
         </>
       )}
 
-      {!loggedIn && (
-        <ErrorContainer>
-          Access denied.
-          <ErrorButton onClick={() => history.push("/")}>
-            back to main page
-          </ErrorButton>
-        </ErrorContainer>
+        {!loggedIn && (
+          <AccessError />
       )}
 
       </Container>

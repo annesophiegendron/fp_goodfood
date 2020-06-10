@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux"
 
-import { Container, Form, Label, Input, Title, SubmitButton, RegisterText } from "../styles/styles_Login"
+import { Container, Form, Label, Input, Title, SubmitButton, RegisterText } from "../styles/styles_Auth"
 import { Footer } from '../components/Footer'
 
-import { Error } from "../styles/styles_Register"
+import { Error } from "../styles/styles_Auth"
 
 import { auth } from "../reducers/auth"
 import { handleLoginUser } from "../fetch_data/auth"
@@ -21,7 +21,7 @@ export const Login = () => {
     <>
     <Container>
       <Form>
-      <Title>Already a member? Sign-in here!</Title>
+      <Title>Already a member? <span role="img" aria-labelledby="sunglasses image">😎</span><br></br> Sign-in here!</Title>
         <Label>email</Label>
             <Input
               type="email"

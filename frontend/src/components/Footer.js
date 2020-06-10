@@ -6,8 +6,7 @@ import styled from 'styled-components'
 import instagram from '../assets/svg/instagram.svg'
 
 export const Container = styled.div`
-margin: auto;
-width: 100%;
+box-sizing: content-box;
 height: 300px;
 padding: 10px;
 text-align: center;
@@ -35,7 +34,7 @@ export const Link = styled.a`
   }
 `
 export const TextSection = styled.div`
-  padding: 100px; 
+  padding: 7.5rem; 
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
@@ -59,8 +58,9 @@ export const Footer = () => {
   return (
     <Container>
       <LinkWrapper>
+        <Link onClick={() => history.push("/")}>welcome</Link>
         <Link onClick={() => history.push("/login")}>login</Link>
-        <Link onClick={() => history.push("/registre")}>register</Link>
+        <Link onClick={() => history.push("/register")}>register</Link>
         <Link onClick={() => history.push("/favourites")}>favourites</Link>
         <Link onClick={() => history.push("/review")}>reviews</Link>
         <Link onClick={() => history.push("/welcome")}>search</Link>

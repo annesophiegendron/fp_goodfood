@@ -17,10 +17,13 @@ export const Video = styled.video`
 
 export const Middle = styled.div`
   position: absolute;
+  width: 100%;
   top: 40%;
   text-align: center; 
-  width: 50%;
-`
+  @media (min-width: 600px) {
+    width: 50%;
+  }
+  `
 
 export const WelcomeMessage = styled.h1`
   margin: 0 auto;
@@ -81,5 +84,5 @@ export const Navbar = styled.div`
   @media (min-width: 600px) {
     right: 3rem;
   }
-`;
+`
 

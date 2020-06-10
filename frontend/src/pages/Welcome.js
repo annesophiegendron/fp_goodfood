@@ -4,9 +4,9 @@ import { useSelector } from "react-redux"
 
 import { AddFavourite } from "../components/AddFavourite"
 import { Logout } from "../components/Logout"
-import { RecipeCard } from "../lib/RecipeCard"
+import { AccessError } from '../components/AccessError'
 
-import { ErrorButton, ErrorContainer } from "../styles/styles_error"
+import { RecipeCard } from "../lib/RecipeCard"
 
 import { handleSubmit } from "../fetch_data/recipes"
  
@@ -103,12 +103,7 @@ export const Welcome = () => {
       </CardContainer>
 
       {!loggedIn && (
-        <ErrorContainer>
-          Access denied.
-          <ErrorButton onClick={() => history.push("/")}>
-            Back to Main Page
-          </ErrorButton>
-        </ErrorContainer>
+          <AccessError />
       )}
       </Container>
       <Footer />
