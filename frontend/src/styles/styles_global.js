@@ -105,9 +105,13 @@ export const MainTitle = styled.h1`
 `
 
 export const CardContainer = styled.div`
-  width: 100%;
-  margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-`;
+  margin-top: 1rem;
+  justify-content: space-evenly;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    width: inherit;
+}
+`

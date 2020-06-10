@@ -6,11 +6,11 @@ import { AddFavourite } from "../components/AddFavourite"
 import { Logout } from "../components/Logout"
 import { AccessError } from '../components/AccessError'
 
-import { RecipeCard } from "../lib/RecipeCard"
+import { RecipeCard } from "../components/RecipeCard"
 
 import { handleSubmit } from "../fetch_data/recipes"
  
-import { HeaderName, FormTitle, Form, Input, OneCard, BackgroundImage, DetailsButton, FormContainer } from "../styles/styles_Welcome"
+import { HeaderName, FormTitle, Form, Input, OneCard, BackgroundImage, CollectionButton, FormContainer } from "../styles/styles_Welcome"
 import { ClearButton, Container, Header, ButtonContainer, CardContainer } from "../styles/styles_global"
 
 import { Footer } from '../components/Footer'
@@ -46,7 +46,7 @@ export const Welcome = () => {
               <Logout></Logout>
               <ClearButton onClick={removeLocalHistory}><span role="img" aria-labelledby="cross">╳ </span>clear search</ClearButton>
             </ButtonContainer>
-            <HeaderName onClick={() => history.push("/profile")}>welcome {name}!
+            <HeaderName onClick={() => history.push("/profile")}><span role="img" aria-labelledby="cross">❤︎</span>welcome {name}!
             </HeaderName>
           </Header>
 
@@ -76,6 +76,18 @@ export const Welcome = () => {
           recipes.map(recipe => {
             return (
               <OneCard key={recipe.id}>
+              
+                <RecipeCard
+                  image={recipe.image}
+                  title={recipe.title}
+                ></RecipeCard>
+
+                <CollectionButton
+                  onClick={() => history.push(`/details/${recipe.id}`)}
+                >
+                  show details
+                </CollectionButton>
+
                 <AddFavourite
                   recipeId={recipe.id}
                   title={recipe.title}
@@ -86,17 +98,6 @@ export const Welcome = () => {
                   }
                   favouriteId={recipe.id}
                 ></AddFavourite>
-
-                <RecipeCard
-                  image={recipe.image}
-                  title={recipe.title}
-                ></RecipeCard>
-
-                <DetailsButton
-                  onClick={() => history.push(`/details/${recipe.id}`)}
-                >
-                  Show More
-                </DetailsButton>
               </OneCard>
             )
           })}

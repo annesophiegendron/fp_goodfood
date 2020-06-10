@@ -4,7 +4,7 @@ import styled from "styled-components"
 //                     WELCOME USER NAVBAR
 // =========================================================
 export const HeaderName = styled.button`
-margin-left: 1rem;
+  margin-left: 1rem;
   color: black;
   background: white;
   border: 1px solid white;
@@ -88,27 +88,31 @@ export const Input = styled.input`
   width: 13rem;
   margin-right: 2rem;
 `
-
+ 
 // =========================================================
 //                     COLLECTION CONTAINER
 // =========================================================
-export const PlusButton = styled.button`
-  font-size: 1.5rem;
+export const CollectionButton = styled.button`
+  idth: 12rem;
   z-index: 100;
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 1;
+  color: #F2F2F2;
+  background: #0D0D0D;
+  border: 1px solid #0D0D0D;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  font-size: 10px;
+  text-transform: uppercase;
   cursor: pointer;
-  text-decoration: none;
-  background: transparent;
-  border: none;
-  :hover {
-    opacity: 0.5;
-  }
+    :hover {
+      color: #000;
+      background: #fff;
+      border: 2px solid #000;
+      transition: all 0.4s ease-in-out;
+    } 
 `
 
 export const Image = styled.img`
-  grid-row: 1 / span 2;
-  grid-column: 1 / span 3;
   background-position: center;
   object-fit: cover;
   border-radius: 10px;
@@ -119,10 +123,7 @@ export const Image = styled.img`
 `
 
 export const DetailsContainer = styled.div`
-  grid-row: 3 / -1;
-  grid-column: 1 / -1;
   text-align: left;
-  z-index: 100;
   font-family: "Roboto", sans-serif;
   font-size: 13px;
   letter-spacing: 1px;
@@ -131,41 +132,37 @@ export const DetailsContainer = styled.div`
 `
 
 export const OneCard = styled.div`
-  width: 60%;
-  height: 25rem;
-  background: #FFFFF;
+  width: 100%;
+  background: #fff;
   margin: 0 auto;
   margin-bottom: 2rem;
-  display: grid;
-  grid-template-columns: 15% 70% 15%;
-  grid-template-rows: 10% 45% 30% 10% 5%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: top;
-  border: 1px solid white;
+  padding: 25px;
+    
   &:hover ${Image} {
     transition: transform 1s;
     transform: scale(1.01); 
     opacity:0.8;
   }
-  // @media (min-width: 568px) {
-  //   width: 45%;
-  // }
-  @media (min-width: 900px) {
-    width: 22%;
+    @media (min-width: 600px) {
+    width: 400px;
   }
 `
 
 export const DetailsButton = styled.button`
-  width: 13rem;
-  grid-row: 4 / span 1;
-  grid-column: 2 / span 1;
-  z-index: 100;
+  display: flex;
+  width: 4rem;
   color: #F2F2F2;
   background: #0D0D0D;
   border: 1px solid #0D0D0D;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  font-size: 10px;
+  text-transform: uppercase;
   cursor: pointer;
   :hover {
     color: #000;
