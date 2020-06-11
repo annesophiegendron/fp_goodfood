@@ -56,10 +56,14 @@ export const Details = () => {
             </ButtonProfile>
           </Header>
          
-          <DetailsCard
-            title={details.title}
-            image={details.image}
-            description={details.instructions}
+            <DetailsCard
+              title={details.title}
+              image={details.image}
+              diet={details.diets}
+              ingredient={details.analyzedInstructions}
+              description={details.instructions}
+              time={details.readyInMinutes} 
+              serving={details.servings}
             ></DetailsCard>
             
           <HeaderReview>

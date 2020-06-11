@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background: white;
   display: flex;
   justify-content: space-between;
