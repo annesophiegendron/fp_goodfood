@@ -11,7 +11,7 @@ import { RecipeCard } from "../components/RecipeCard"
 import { handleSubmit } from "../fetch_data/recipes"
  
 import { HeaderName, FormTitle, Form, Input, OneCard, BackgroundImage, CollectionButton, FormContainer, ButtonWrapper } from "../styles/styles_Welcome"
-import { ClearButton, Container, Header, ButtonContainer, CardContainer } from "../styles/styles_global"
+import { ClearButton, Container, Header, ButtonContainer, CardContainer, SubmitButton } from "../styles/styles_global"
 
 import { Footer } from '../components/Footer'
 
@@ -63,7 +63,8 @@ export const Welcome = () => {
               placeholder="Search by ingredients..."
               value={searchText}
               onChange={event => setSearchText(event.target.value)}
-            ></Input>
+                ></Input>
+                <SubmitButton onClick={event =>handleSubmit(event, searchText, setRecipes, setSearchText) }>search</SubmitButton>
             </Form>
           </FormContainer>
           <h3>{message}</h3>

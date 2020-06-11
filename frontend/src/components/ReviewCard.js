@@ -16,7 +16,8 @@ export const ReviewCard = props => {
         <TopContainer>
           <div>
             <Paragraph>
-              {review.title}
+              <span role="img" aria-labelledby="cross">☺︎</span>{" "}
+              {review.title} {" "}
               {moment(review.createdAt).fromNow()}
             </Paragraph>
             <BottomContainer>{review.review}</BottomContainer>
