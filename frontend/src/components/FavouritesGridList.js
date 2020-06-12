@@ -32,9 +32,9 @@ export const ImageGridList = ({favourites}) => {
   const fav = favourites.map(favourite => {
     return (
       <div className={classes.root}>
-        <GridList cellHeight={300} cellWidth={100} className={classes.gridList} cols={1}>
+        <GridList cellHeight={250} cellWidth={80} className={classes.gridList} cols={1}>
         
-            <GridListTile key={favourite.image} cols={favourite.cols || 1}>
+            <GridListTile key={favourite.image} cols={favourite.cols || 1} >
               <img src={favourite.image} alt={favourite.title} />
             
             <GridListTileBar
