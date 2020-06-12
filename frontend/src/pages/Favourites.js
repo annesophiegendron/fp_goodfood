@@ -4,7 +4,9 @@ import { useSelector } from "react-redux"
 
 import { Container, Header, ButtonContainer, ClearButton, MainTitle, CardContainer } from "../styles/styles_global"
 import { Logout } from "../components/Logout"
-import { FavouriteCard } from "../components/FavouriteCard"
+// import { FavouriteCard } from "../components/FavouriteCard"
+import { ImageGridList } from '../components/FavouritesGridList'
+
 import { Footer } from '../components/Footer'
 import { AccessError } from '../components/AccessError'
 
@@ -40,7 +42,9 @@ export const Favourites = () => {
             Your favourites recipes
           </MainTitle>
           <CardContainer>
-            <FavouriteCard favourites={favourites}></FavouriteCard>
+              {/* <FavouriteCard favourites={favourites}></FavouriteCard> */}
+              <ImageGridList favourites={favourites}></ImageGridList>
+
           </CardContainer>
         </>
       )}
