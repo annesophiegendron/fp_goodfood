@@ -1,14 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import GridList from '@material-ui/core/GridList'
+import GridListTile from '@material-ui/core/GridListTile'
 
 import GridListTileBar from '@material-ui/core/GridListTileBar'
-import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
+import { AccessAlarm, ThreeDRotation } from '@material-ui/icons'
 
-import DeleteIcon from '@material-ui/icons/Delete';
-import IconButton from '@material-ui/core/IconButton';
-// import InfoIcon from '@material-ui/icons/Info';
+import DeleteIcon from '@material-ui/icons/DeleteOutlined'
+import IconButton from '@material-ui/core/IconButton'
 
 import { deleteFavourite } from "../fetch_data/favourites"
 
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
   },
@@ -25,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     width: 500,
     height: 450,
   },
-}));
+}))
 
 
 export const ImageGridList = ({favourites}) => {
@@ -33,13 +32,12 @@ export const ImageGridList = ({favourites}) => {
   const fav = favourites.map(favourite => {
     return (
       <div className={classes.root}>
-        <GridList cellHeight={160} className={classes.gridList} cols={3}>
+        <GridList cellHeight={300} cellWidth={100} className={classes.gridList} cols={1}>
         
             <GridListTile key={favourite.image} cols={favourite.cols || 1}>
               <img src={favourite.image} alt={favourite.title} />
             
-          
-              <GridListTileBar
+            <GridListTileBar
               title={favourite.title}
               actionIcon={
                 <IconButton aria-label={`remove ${favourite.title}`} className={classes.icon} onClick={() => deleteFavourite(favourite._id)}>
@@ -47,16 +45,11 @@ export const ImageGridList = ({favourites}) => {
                 </IconButton>
               }
             />
-          
-          
-          
-          
           </GridListTile>
           )}
         </GridList>
       </div>
     )
-  
   })
   return <>{fav}</>
 }

@@ -110,14 +110,13 @@ export const MainTitle = styled.h1`
 
 export const CardContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  justify-content: space-evenly;
+  flex-direction: column;
   width: 100%;
 
-  @media (min-width: 600px) {
-    width: inherit;
-}
+  @media (min-width: 900px) {
+    width: 50%;
+    flex-direction: row;
+  }
 `
 
 export const SubmitButton = styled.button`
