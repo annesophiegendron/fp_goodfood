@@ -114,7 +114,6 @@ export const CardContainer = styled.div`
   width: 100%;
 
   @media (min-width: 900px) {
-    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;

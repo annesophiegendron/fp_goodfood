@@ -92,34 +92,6 @@ export const Input = styled.input`
 // =========================================================
 //                     COLLECTION CONTAINER
 // =========================================================
-export const ButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-`
-
-export const CollectionButton = styled.button`
-  width: 6rem;
-  height: 2rem;
-  color: #F2F2F2;
-  background: #027373;
-  padding-top: 6px;
-  padding-bottom: 2px;
-  border: 1px solid #027373;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 1px;
-  font-size: 12px;
-  text-transform: uppercase;
-  cursor: pointer;
-    :hover {
-      color: #027373;
-      background: #fff;
-      border: 2px solid #027373;
-      transition: all 0.4s ease-in-out;
-    } 
-`
 
 export const AddButton = styled.button`
   width: 6rem;
@@ -163,24 +135,15 @@ export const DetailsContainer = styled.div`
   margin-bottom: 5px;
 `
 
-export const OneCard = styled.div`
-  width: 100%;
-
-  background: #fff;
-  margin: 0 auto;
-  margin-bottom: 2rem;
+export const SearchResultContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   justify-content: center;
-  align-content: top;
-  padding: 25px;
-    
-  &:hover ${Image} {
-    transition: transform 1s;
-    transform: scale(1.01); 
-    opacity:0.8;
-  }
-    @media (min-width: 600px) {
-    width: 400px;
+
+
+    @media (min-width: 900px) {
+      flex-direction: row;
+      flex-wrap: wrap;
   }
 `

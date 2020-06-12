@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-
 export const ImageGridList = ({favourites}) => {
   const classes = useStyles();
   const fav = favourites.map(favourite => {
