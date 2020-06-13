@@ -5,9 +5,9 @@ import { useSelector } from "react-redux"
 import { Logout } from "../components/Logout"
 import { AccessError } from '../components/AccessError'
 import { Footer } from '../components/Footer'
+import { AddFavourite } from '../components/AddFavourite'
 
 import { handleSubmit } from "../fetch_data/recipes"
-import { addFavourite } from "../fetch_data/favourites"
  
 import { HeaderName, FormTitle, Form, Input, BackgroundImage, FormContainer, SearchResultContainer } from "../styles/styles_Welcome"
 import { ClearButton, Container, Header, ButtonContainer, CardContainer, SubmitButton } from "../styles/styles_global"
@@ -18,8 +18,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
-import IconButton from '@material-ui/core/IconButton'
-import StarBorderIcon from '@material-ui/icons/StarBorder'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
  
-export const Welcome = ({ title, image, favouriteId }) => {
+export const Welcome = () => {
   const recipesArray = JSON.parse(window.sessionStorage.getItem("recipesArray"))
   const classes = useStyles();
 
@@ -62,8 +60,6 @@ export const Welcome = ({ title, image, favouriteId }) => {
     setRecipes([])
     window.sessionStorage.removeItem("recipesArray")
   }
-
-  const recipe = { title, image, favouriteId, name }
 
   return ( 
     <>
@@ -116,9 +112,17 @@ export const Welcome = ({ title, image, favouriteId }) => {
                         title={recipe.title}
                         titlePosition="top"
                         actionIcon={
-                          <IconButton aria-label={`star ${recipe.title}`} className={classes.icon} onClick={() => addFavourite(recipe)}>
-                            <StarBorderIcon />
-                          </IconButton>
+                          <AddFavourite
+                            className={classes.icon}
+                            recipeId={recipe.id}
+                            title={recipe.title}
+                            image={
+                              recipe.image === undefined
+                                ? null
+                                : `${recipe.image}`
+                            }
+                            favouriteId={recipe.id}
+                          />
                         }
                         actionPosition="left"
                         className={classes.titleBar}
@@ -131,7 +135,6 @@ export const Welcome = ({ title, image, favouriteId }) => {
             })
           }
           </SearchResultContainer>
-
 
       {!loggedIn && (
           <AccessError />
