@@ -139,11 +139,10 @@ export const SearchResultContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: center;
-
 
     @media (min-width: 900px) {
-      flex-direction: row;
-      flex-wrap: wrap;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
   }
 `

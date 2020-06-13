@@ -30,8 +30,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 800,
-    height: 500,
+    width: 300,
+    height: 300,
     transform: 'translateZ(0)',
   },
   titleBar: {
@@ -107,7 +107,7 @@ export const Welcome = ({ title, image, favouriteId }) => {
             recipes.map(recipe => {
               return (
                 <div className={classes.root}>
-                  <GridList cellHeight={250} cellWidth={80}  className={classes.gridList}>
+                  <GridList cellHeight={250} cellWidth={80}  className={classes.gridList} cols={1}>
             
                     <GridListTile key={recipe.image} cols={recipe.featured ? 2 : 1} rows={recipe.featured ? 2 : 1}>
                       <img src={recipe.image} alt={recipe.title} />

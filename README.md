@@ -10,3 +10,7 @@
 
 Backend: https://goodfood-annesophie.herokuapp.com/
 Frontend: https://goodfood-annesophiegendron.netlify.app/
+
+
+todo: 
+. catch error 402 when endpoints quota is reached (150points / day) otherwise map function is not read

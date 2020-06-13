@@ -42,7 +42,6 @@ export const Favourites = () => {
           </MainTitle>
           <CardContainer>
               <ImageGridList favourites={favourites}></ImageGridList>
-
           </CardContainer>
         </>
       )}

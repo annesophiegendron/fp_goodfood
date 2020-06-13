@@ -8,7 +8,8 @@ import { User } from "./models/User"
 import { Review } from "./models/Review"
 import { Like } from "./models/Like"
 
-const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/goodfood";
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/goodfood"
+mongoose.set ( 'useCreateIndex', true)
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.Promise = Promise
 
