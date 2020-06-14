@@ -10,7 +10,7 @@ import { AddFavourite } from '../components/AddFavourite'
 import { handleSubmit } from "../fetch_data/recipes"
  
 import { HeaderName, FormTitle, Form, Input, BackgroundImage, FormContainer, SearchResultContainer } from "../styles/styles_Welcome"
-import { ClearButton, Container, Header, ButtonContainer, CardContainer, SubmitButton } from "../styles/styles_global"
+import { ClearButton, Container, Header, ButtonContainer, SubmitButton } from "../styles/styles_global"
 
 import fruits from "../assets/images/fruits.jpg"
 
@@ -18,6 +18,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
+import { LinearScale } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,19 +29,24 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 300,
-    height: 300,
+    width: 400,
+    height: 400,
     transform: 'translateZ(0)',
+    cursor: 'pointer',
   },
   titleBar: {
     background:
       'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
       'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+    letterSpacing: '1px',
+    cursor: 'pointer',
   },
   icon: {
-    color: 'white',
+    background: 'white',
+    opacity: '1',
+    cursor: 'pointer',
   },
-}));
+}))
  
 export const Welcome = () => {
   const recipesArray = JSON.parse(window.sessionStorage.getItem("recipesArray"))
@@ -103,15 +109,17 @@ export const Welcome = () => {
             recipes.map(recipe => {
               return (
                 <div className={classes.root}>
-                  <GridList cellHeight={250} cellWidth={80}  className={classes.gridList} cols={1}>
+                  <GridList cellHeight={250} cellWidth={80}  className={classes.gridList} cols={1} onClick={() => history.push(`/details/${recipe.id}`)}>
             
-                    <GridListTile key={recipe.image} cols={recipe.featured ? 2 : 1} rows={recipe.featured ? 2 : 1}>
+                    <GridListTile key={recipe.image} cols={recipe.featured ? 2 : 1} rows={recipe.featured ? 2 : 1}
+                                        >
                       <img src={recipe.image} alt={recipe.title} />
-                    
+
                       <GridListTileBar
                         title={recipe.title}
                         titlePosition="top"
                         actionIcon={
+                          
                           <AddFavourite
                             className={classes.icon}
                             recipeId={recipe.id}
