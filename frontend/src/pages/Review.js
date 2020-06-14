@@ -37,7 +37,7 @@ export const Review = () => {
               </ClearButton>
               <ClearButton onClick={() => history.goBack()}>back</ClearButton>
             </ButtonContainer>
-            <UserContainer>{name}'s account</UserContainer>
+            <UserContainer>{name}'s profile</UserContainer>
           </Header>
           <MainTitle>
             Your reviews
