@@ -6,7 +6,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import { Main } from "./pages/Main"
 import { Register } from "./pages/Register"
 import { Login } from "./pages/Login"
-import { Welcome } from "./pages/Welcome"
+import { Welcome } from "./pages/SearchPage"
 import { Details } from "./pages/Details"
 import { Review } from "./pages/Review"
 import { Profile } from "./pages/Profile"
@@ -28,7 +28,7 @@ export const App = () => {
           <Route path="/" exact component={Main} />
           <Route path="/register" exact component={Register} />
           <Route path="/login" exact component={Login} />
-          <Route path="/welcome" exact component={Welcome} />
+          <Route path="/Welcome" exact component={Welcome} />
           <Route path="/details/:recipeId" exact component={Details} />
           <Route path="/review" exact component={Review} />
           <Route path="/profile" exact component={Profile} />

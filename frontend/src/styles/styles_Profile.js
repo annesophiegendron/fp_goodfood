@@ -48,7 +48,8 @@ export const Text = styled.p`
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
   color: #0D0D0D;
-  font-size: 12px;
+  font-size: 11px;
   background: #26A653
   font-weight: ligther;
+  text-transform: uppercase;
 `

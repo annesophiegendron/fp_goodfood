@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background: white;
   display: flex;
   justify-content: space-between;
@@ -102,16 +102,47 @@ export const MainTitle = styled.h1`
   text-align: center;
   font-family: "Roboto", sans-serif;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #F2F2F2;
+  height: 8rem;
+  padding-top: 7rem;
 `
 
 export const CardContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  justify-content: space-evenly;
+  flex-direction: column;
   width: 100%;
 
-  @media (min-width: 600px) {
-    width: inherit;
-}
+  @media (min-width: 900px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`
+
+export const SubmitButton = styled.button`
+  width: 6rem;
+  height: 2rem;
+  margin-top: 1rem;
+  color: #F2F2F2;
+  background: #027373;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  border: 1px solid #027373;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+    :hover {
+     transition: all 0.4s ease-in-out;
+     opacity: 0.9;
+  } 
+    :active {
+    background-color: #027373;
+    transform: translateY(3px);
+    opacity: 0.7;
+    }
 `

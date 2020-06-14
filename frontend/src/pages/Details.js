@@ -6,13 +6,12 @@ import { DetailsReview } from "../components/DetailsReview"
 import { Logout } from "../components/Logout"
 import { DetailsCard } from "../components/DetailsCard"
 import { Footer } from '../components/Footer'
+import { AddReview } from "../components/AddReview"
 
 import { fetchData } from "../fetch_data/recipes"
 import { fetchReviews, addReview } from "../fetch_data/reviews"
-import { AddReview } from "../components/AddReview"
 
 import { ButtonProfile, HeaderReview, InputReview, Form } from "../styles/styles_Details"
-
 import { Container, ClearButton, Header, ButtonContainer, Loader } from "../styles/styles_global"
 
 export const Details = () => {
@@ -29,7 +28,7 @@ export const Details = () => {
   const name = useSelector(store => store.auth.name)
 
   useEffect(() => {
-    fetchData(recipeId, setError, setDetails, setLoading);
+    fetchData(recipeId, setError, setDetails, setLoading)
   }, [recipeId])
 
   useEffect(() => {
@@ -56,10 +55,14 @@ export const Details = () => {
             </ButtonProfile>
           </Header>
          
-          <DetailsCard
-            title={details.title}
-            image={details.image}
-            description={details.description}
+            <DetailsCard
+              title={details.title}
+              image={details.image}
+              diet={details.diets}
+              // ingredient={details.analyzedInstructions}
+              description={details.instructions}
+              time={details.readyInMinutes} 
+              serving={details.servings}
             ></DetailsCard>
             
           <HeaderReview>
