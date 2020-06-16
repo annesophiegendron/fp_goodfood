@@ -58,11 +58,11 @@ export const Details = () => {
             <DetailsCard
               title={details.title}
               image={details.image}
-              diet={details.diets}
               // ingredient={details.analyzedInstructions}
               description={details.instructions}
               time={details.readyInMinutes} 
               serving={details.servings}
+              sourceUrl={details.sourceUrl}
             ></DetailsCard>
             
           <HeaderReview>

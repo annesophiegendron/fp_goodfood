@@ -12,6 +12,7 @@ export const Logout = () => {
   const history = useHistory()
 
   //LOG OUT
+  // eslint-disable-next-line
   const handleLogOut = () => {
     history.push("/")
     dispatch(auth.actions.setLoggedOut())
