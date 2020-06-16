@@ -89,7 +89,7 @@ export const Welcome = () => {
               handleSubmit(event, searchText, setRecipes, setSearchText)
             }
           >
-              <FormTitle>What's in your fridge?</FormTitle>
+              <FormTitle>What's in your fridge? TEST NETLIFY UPDATES</FormTitle>
             
               <Input
               placeholder="Search by ingredients..."
