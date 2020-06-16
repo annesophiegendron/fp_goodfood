@@ -9,6 +9,6 @@
 ## View it live
 
 Backend: https://goodfood-annesophie.herokuapp.com/
-Frontend: https://goodfood-annesophiegendron.netlify.app/
+Frontend: https://goodfood-finalproject-annesophie.netlify.app/
 
 
