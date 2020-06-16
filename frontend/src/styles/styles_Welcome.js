@@ -146,3 +146,5 @@ export const SearchResultContainer = styled.div`
      justify-content: center;
   }
 `
+
+

@@ -1,9 +1,25 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
+export const CardWrapper = styled.div`
   display: flex;
-  background: #fff;
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow:  5px 5px 50px #d9d9d9, 
+             -5px -5px 60px #ffffff;
+  
+  @media (min-width: 900px) {
+      width: 70%;
+      padding: 2rem;
+  }          
+`
+
+export const Container = styled.div`
+  width: 90%;
+  padding: 20px;
+  display: flex;
   color: #0D0D0D;
   flex-direction: column;
   font-family: "Roboto", sans-serif;
@@ -14,9 +30,10 @@ export const Container = styled.div`
 `
 
 export const DescriptionContainer = styled.div`
-  //
   margin-left: 3rem;
   margin-right: 3rem;
+  justify-content: center;
+
   @media (min-width: 900px) {
     padding: 2rem 1rem;
     margin: 0;
@@ -32,8 +49,8 @@ export const Image = styled.img`
     width: 40%;
   }
   @media (min-width: 900px) {
-    height: 100%;
     width: 50%;
+    height: 320px;
     padding: 2rem;
   }
 `
@@ -55,4 +72,9 @@ export const Label = styled.p`
 export const Text = styled.p`
   margin: 0;
   line-height: 1.5rem;
+`
+
+export const Link = styled.a`
+  cursor: pointer; 
+  text-decoration: none;
 `

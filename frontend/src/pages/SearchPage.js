@@ -9,7 +9,7 @@ import { AddFavourite } from '../components/AddFavourite'
 
 import { handleSubmit } from "../fetch_data/recipes"
  
-import { HeaderName, FormTitle, Form, Input, BackgroundImage, FormContainer, SearchResultContainer } from "../styles/styles_Welcome"
+import { HeaderName, FormTitle, Form, Input, BackgroundImage, FormContainer, SearchResultContainer} from "../styles/styles_Welcome"
 import { ClearButton, Container, Header, ButtonContainer, SubmitButton } from "../styles/styles_global"
 
 import fruits from "../assets/images/fruits.jpg"
@@ -18,6 +18,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
+// eslint-disable-next-line
 import { LinearScale } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     width: 400,
     height: 400,
     transform: 'translateZ(0)',
-    cursor: 'pointer',
+    // cursor: 'pointer',
   },
   titleBar: {
     background:
@@ -109,9 +110,9 @@ export const Welcome = () => {
             recipes.map(recipe => {
               return (
                 <div className={classes.root}>
-                  <GridList cellHeight={250} cellWidth={80}  className={classes.gridList} cols={1} onClick={() => history.push(`/details/${recipe.id}`)}>
+                  <GridList cellHeight={250} cellWidth={80}  className={classes.gridList} cols={1}>
             
-                    <GridListTile key={recipe.image} cols={recipe.featured ? 2 : 1} rows={recipe.featured ? 2 : 1}
+                    <GridListTile key={recipe.image} onClick={() => history.push(`/details/${recipe.id}`)} cols={recipe.featured ? 2 : 1} rows={recipe.featured ? 2 : 1 }
                                         >
                       <img src={recipe.image} alt={recipe.title} />
 
@@ -136,8 +137,9 @@ export const Welcome = () => {
                         className={classes.titleBar}
                       />
                     </GridListTile>
-                )}
+                )
               </GridList>
+                  
                 </div>
               )
             })

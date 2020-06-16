@@ -1,9 +1,11 @@
 import React from 'react'
+
 import { makeStyles } from '@material-ui/core/styles'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 
 import GridListTileBar from '@material-ui/core/GridListTileBar'
+// eslint-disable-next-line
 import { AccessAlarm, ThreeDRotation } from '@material-ui/icons'
 
 import DeleteIcon from '@material-ui/icons/DeleteOutlined'
@@ -24,16 +26,25 @@ const useStyles = makeStyles((theme) => ({
     width: 300,
     height: 300,
   },
+  gridListTile: {
+    letterSpacing: 1
+  },
+  hover: {
+    "&:hover": {
+      cursor: 'pointer',
+    }
+  }
 }))
 
 export const ImageGridList = ({favourites}) => {
-  const classes = useStyles();
+  const classes = useStyles()
+
   const fav = favourites.map(favourite => {
     return (
       <div className={classes.root}>
         <GridList cellHeight={250} cellWidth={80} className={classes.gridList} cols={1}>
         
-            <GridListTile key={favourite.image} cols={favourite.cols || 1} >
+          <GridListTile key={favourite.image} cols={favourite.cols || 1} >
               <img src={favourite.image} alt={favourite.title} />
             
             <GridListTileBar
