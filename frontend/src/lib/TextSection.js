@@ -4,10 +4,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-margin: auto;
-width: 60%;
-padding: 10px;
-text-align: center;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+
+  @media (min-width: 900px) {
+   width: 60%;
+  }
 `
 export const TextIntro = styled.h2`
   padding: 60px; 
