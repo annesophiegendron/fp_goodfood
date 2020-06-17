@@ -11,8 +11,13 @@ export const Header = styled.div`
   width: 100%;
   height: 4rem;
   background: white;
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
+  margin-bottom: 2rem;
+    
+  @media (min-width: 900px) {
+    display: flex;
+  }
 `
 
 export const ClearButton = styled.button`
@@ -36,7 +41,7 @@ export const ClearButton = styled.button`
     width: 0;
     background: transparent;
       transition: width .5s ease, background-color .5s ease;
-  }
+    }
   :hover {
     color: black;
   }

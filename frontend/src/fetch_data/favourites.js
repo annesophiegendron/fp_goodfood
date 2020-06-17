@@ -29,7 +29,7 @@ export const addFavourite = recipe => {
 }
 
 // REMOVE ITEM FROM FAVOURITES
-//
+
 export const deleteFavourite = favouriteId => {
   fetch(URL_ROOT + `favourites/${favouriteId}`, {
     method: "DELETE",
