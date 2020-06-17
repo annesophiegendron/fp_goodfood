@@ -7,7 +7,6 @@ import { Logout } from "../components/Logout"
 import { Footer } from '../components/Footer'
 import { AccessError } from '../components/AccessError'
 
-import { UserContainer } from "../styles/styles_Review"
 import { Container, ClearButton, Header, ButtonContainer, MainTitle } from "../styles/styles_global"
 
 import { getReviews } from "../fetch_data/reviews"
@@ -37,7 +36,6 @@ export const Review = () => {
               </ClearButton>
               <ClearButton onClick={() => history.goBack()}>back</ClearButton>
             </ButtonContainer>
-            <UserContainer>{name}'s profile</UserContainer>
           </Header>
           <MainTitle>
             Your reviews
