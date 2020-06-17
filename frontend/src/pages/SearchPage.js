@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     width: 400,
     height: 400,
     transform: 'translateZ(0)',
-    // cursor: 'pointer',
   },
   titleBar: {
     background:
