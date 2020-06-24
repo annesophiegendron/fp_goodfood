@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   gridList: {
     width: 400,
-    height: 400,
+    height: 300,
     transform: 'translateZ(0)',
   },
   titleBar: {
