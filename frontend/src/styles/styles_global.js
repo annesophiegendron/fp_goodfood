@@ -9,11 +9,12 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 4rem;
+  height: 2rem;
   background: white;
   display: inline-block;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
     
   @media (min-width: 900px) {
     display: flex;
