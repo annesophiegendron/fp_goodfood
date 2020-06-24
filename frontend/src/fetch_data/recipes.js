@@ -29,5 +29,5 @@ export const fetchData = async (recipeId, setError, setDetails, setLoading) => {
     setDetails({ ...json })
     setLoading(false)
   }
-}
+} 
 

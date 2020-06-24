@@ -14,8 +14,6 @@ export const DetailsCard = ({ image, title, description, time, serving, sourceUr
           <Title>{title === undefined ? null : title}</Title>
           <Label>Preparation:</Label>
           <Text>{description}</Text>
-          <Label>Ingredients:</Label>
-          <Text>{ingredient}</Text>
           <Label>Time preparation:</Label>
           <Text>{time}'</Text>
           <Label>Portion(s)</Label>
